@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Jose Ignacio/Downloads/**)",
+      "Bash(python -c \"import pypdf,sys; r=pypdf.PdfReader\\('Brief_Marca_El_Rey.pdf'\\); [print\\(p.extract_text\\(\\)\\) for p in r.pages]\")",
+      "Bash(python -c \"import PyPDF2; r=PyPDF2.PdfReader\\(open\\('Brief_Marca_El_Rey.pdf','rb'\\)\\); [print\\(p.extract_text\\(\\)\\) for p in r.pages]\")",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(curl -sL \"https://api.anthropic.com/v1/design/h/1JBknnO85yEn56RfdlrgKg\" -o design_file.bin -w \"HTTP %{http_code} | type: %{content_type} | size: %{size_download}\\\\n\")",
+      "Bash(mkdir -p design_unpacked)",
+      "Bash(tar -xzf design_file.bin -C design_unpacked)",
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\GitHub CLI;$env:PATH\"; gh --version)",
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\GitHub CLI;$env:PATH\"; gh auth status)",
+      "PowerShell(git init)",
+      "PowerShell(git add -A)"
+    ]
+  }
+}

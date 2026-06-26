@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>html,body{margin:0}body{background:var(--bg);padding:24px 28px;font-family:var(--font-body)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+label{font-size:12px;font-weight:500;color:var(--fg-2)}
+input,select,textarea{font:inherit;font-size:14px;padding:12px 14px;border-radius:var(--radius-md);border:1px solid var(--line-strong);background:var(--bg-elevated);color:var(--fg-1);outline:none;transition:all var(--dur-base) var(--ease-standard);font-family:var(--font-body)}
+input:focus{border-color:var(--er-verde-pino);box-shadow:0 0 0 3px var(--focus-ring)}
+.row-cb{display:flex;align-items:center;gap:10px;padding-top:24px}
+.cb{width:18px;height:18px;border:1.5px solid var(--er-verde-pino);border-radius:4px;display:inline-flex;align-items:center;justify-content:center;background:var(--er-verde-pino);color:var(--er-crema);font-size:12px}
+</style></head><body>
+<div class="grid">
+  <div class="field"><label>Nombre del niño</label><input value="Lucas"/></div>
+  <div class="field"><label>Edad</label><select><option>7 años</option></select></div>
+  <div class="field"><label>Email</label><input type="email" placeholder="familia@correo.com"/></div>
+  <div class="row-cb"><span class="cb">✓</span><span style="font-size:13px;color:var(--fg-1)">Acepto recibir información</span></div>
+</div>
+</body></html>

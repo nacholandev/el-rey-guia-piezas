@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>html,body{margin:0}body{background:var(--bg);padding:22px 28px;font-family:var(--font-body)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.row + .row{margin-top:14px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:500;line-height:1}
+.solid{background:var(--er-verde-pino);color:var(--er-crema)}
+.soft{background:var(--er-verde-pino-10);color:var(--er-verde-pino)}
+.warm{background:var(--er-malva-10);color:var(--er-malva)}
+.deep{background:var(--er-azul-10);color:var(--er-azul-marino)}
+.outline{background:transparent;border:1px solid var(--line-strong);color:var(--fg-2)}
+.dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+.lbl{font-family:var(--font-body);font-size:11px;color:var(--fg-3);letter-spacing:0.08em;text-transform:uppercase;width:80px}
+</style></head><body>
+<div class="row">
+  <span class="lbl">Tags</span>
+  <span class="pill solid">6–8 años</span>
+  <span class="pill soft">Iniciación</span>
+  <span class="pill warm">Editorial</span>
+  <span class="pill deep">Avanzado</span>
+  <span class="pill outline">Borrador</span>
+</div>
+<div class="row">
+  <span class="lbl">Status</span>
+  <span class="pill soft"><span class="dot"></span>Activo</span>
+  <span class="pill warm"><span class="dot"></span>En curso</span>
+  <span class="pill outline"><span class="dot" style="background:var(--fg-3)"></span>Próximamente</span>
+</div>
+</body></html>

@@ -1,0 +1,4 @@
+# Only the landing/ folder should ship. Keep strategy + design source out.
+design_unpacked/
+*.md
+.claude/

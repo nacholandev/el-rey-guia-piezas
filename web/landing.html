@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clase de ajedrez gratis para tu hijo — El Rey</title>
+<meta name="description" content="Reserva una clase de prueba gratuita en El Rey. Ajedrez para niños que enseña a pensar: criterio, calma y confianza. Plazas limitadas por grupo." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="assets/logos/isotipo-verde.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+
+<!-- Minimal header: logo + single action, no nav (ad landing) -->
+<header class="er-mini-header">
+  <div class="er-mini-header__inner">
+    <a class="er-brand" href="index.html" aria-label="El Rey"><img src="assets/logos/isotipo-verde.svg" alt="El Rey" class="er-brand__mark" /></a>
+    <a href="#reservar" class="er-btn er-btn--primary er-btn--sm">Reservar plaza</a>
+  </div>
+</header>
+
+<main>
+  <!-- ── Hero with offer + form ──────────────────────────────────────── -->
+  <section class="er-ld-hero">
+    <img src="assets/pieces/rey-crema.svg" alt="" class="er-hero__piece" aria-hidden="true" />
+    <div class="er-container er-ld-hero__grid">
+      <div>
+        <div class="er-eyebrow er-eyebrow--on-dark">Clase de prueba gratuita · plazas limitadas</div>
+        <h1 class="er-ld-hero__title">Ajedrez que enseña a tu hijo a <em>pensar</em>.</h1>
+        <p class="er-ld-hero__lead">No memorizamos jugadas. Enseñamos a observar, analizar y decidir. La habilidad que se queda fuera del tablero: criterio, calma y confianza.</p>
+        <ul class="er-ld-bullets">
+          <li><span class="er-tick">✓</span> Grupos de hasta 6–8 niños · atención real</li>
+          <li><span class="er-tick">✓</span> Método propio, por edad (6 a 16 años)</li>
+          <li><span class="er-tick">✓</span> Primera clase gratis y sin compromiso</li>
+        </ul>
+      </div>
+
+      <!-- Offer card with lead form -->
+      <div class="er-ld-card" id="reservar">
+        <h3>Reserva la clase de prueba</h3>
+        <p class="sub">Gratis. Te confirmamos en menos de 48 horas.</p>
+        <form class="er-form" data-contact-form novalidate>
+          <div class="er-field">
+            <label for="l-nombre">Nombre del niño o niña</label>
+            <input id="l-nombre" name="nombre" placeholder="Lucas" required />
+          </div>
+          <div class="er-row-2">
+            <div class="er-field">
+              <label for="l-edad">Edad</label>
+              <select id="l-edad" name="edad">
+                <option>6 años</option><option>7 años</option><option>8 años</option>
+                <option>9 años</option><option>10 años</option><option>11 años</option>
+                <option>12 años</option><option>13 años</option><option>14 años</option>
+                <option>15 años</option><option>16 años</option>
+              </select>
+            </div>
+            <div class="er-field">
+              <label for="l-tel">WhatsApp o teléfono</label>
+              <input id="l-tel" name="telefono" type="tel" placeholder="+58 000 000 0000" required />
+            </div>
+          </div>
+          <div class="er-field">
+            <label for="l-email">Email</label>
+            <input id="l-email" name="email" type="email" placeholder="familia@correo.com" required />
+          </div>
+          <button class="er-btn er-btn--primary er-btn--lg er-btn--block" type="submit">Quiero la clase gratis</button>
+          <p class="er-micro">Sin compromiso. Tus datos solo se usan para coordinar la clase.</p>
+        </form>
+
+        <div class="er-thanks" style="text-align:center">
+          <img src="assets/logos/isotipo-verde.svg" alt="" style="width:48px;height:48px;margin:0 auto 12px" />
+          <h3 style="margin:0 0 8px">¡Listo, <span data-name-slot>familia</span>!</h3>
+          <p class="er-small">Hemos recibido tu reserva. Te escribimos en menos de 48 horas para coordinar el día y la hora.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <div class="er-trust">
+    <span>Formando mentes estratégicas desde 2020</span> ·
+    <span>Grupos reducidos</span> ·
+    <span>Método propio</span> ·
+    <span>Camino federado disponible</span>
+  </div>
+
+  <!-- ── Why (multicolumn, condensed) ────────────────────────────────── -->
+  <section class="er-section er-section--crema">
+    <div class="er-container er-reveal">
+      <div class="er-eyebrow" style="text-align:center">Por qué El Rey</div>
+      <h2 class="er-section__title" style="text-align:center">Más que jugar: aprender a decidir.</h2>
+      <div class="er-cards3" style="margin-top:32px">
+        <article class="er-card"><img src="assets/values/pensamiento-estrategico.svg" alt="" class="er-card__piece" /><h3 class="er-card__name">Pensar antes de mover</h3><p class="er-card__body">Cada decisión tiene un porqué. El niño aprende a anticipar, no a improvisar.</p></article>
+        <article class="er-card"><img src="assets/values/confianza.svg" alt="" class="er-card__piece" /><h3 class="er-card__name">Confianza real</h3><p class="er-card__body">Se construye en el logro y, sobre todo, en el error bien acompañado.</p></article>
+        <article class="er-card"><img src="assets/values/cercania.svg" alt="" class="er-card__piece" /><h3 class="er-card__name">Acompañamiento cercano</h3><p class="er-card__body">Cada niño tiene un nombre, un ritmo y una historia. Caminamos a su lado.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Testimonial ─────────────────────────────────────────────────── -->
+  <section class="er-testimonial">
+    <div class="er-container">
+      <img src="assets/pieces/caballo-crema.svg" alt="" class="er-testimonial__piece" />
+      <p class="er-testimonial__quote">"Lucas llegó tímido. Hoy explica sus jugadas a sus compañeros y a su abuelo. El cambio no es de ajedrez: es de fondo."</p>
+      <div class="er-testimonial__attr"><b>María C.</b> &nbsp;·&nbsp; madre de Lucas, 8 años</div>
+    </div>
+  </section>
+
+  <!-- ── Final CTA ───────────────────────────────────────────────────── -->
+  <section class="er-section er-section--dark">
+    <div class="er-container er-narrow er-reveal" style="text-align:center;margin:0 auto">
+      <h2 class="er-section__title">Reserva la plaza de tu hijo.</h2>
+      <p class="er-lead" style="color:var(--fg-on-dark-2);max-width:46ch;margin:0 auto 28px">La clase de prueba es gratis y las plazas por grupo son limitadas. Empieza esta semana.</p>
+      <a href="#reservar" class="er-btn er-btn--primary er-btn--lg">Reservar clase gratis</a>
+    </div>
+  </section>
+</main>
+
+<div class="er-ld-foot">© 2026 El Rey · Escuela de ajedrez · Venezuela — Aviso legal · Privacidad</div>
+
+<script src="js/site.js"></script>
+</body>
+</html>

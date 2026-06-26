@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+<style>html,body{margin:0}body{background:var(--bg);padding:0;font-family:var(--font-body)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:rgba(243,239,230,0.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:28px}
+.brand-tx{font-family:var(--font-display);font-weight:800;font-size:14px;letter-spacing:-0.01em;color:var(--fg-1)}
+.links{display:flex;gap:28px}
+.links a{font-size:14px;color:var(--fg-1);text-decoration:none;font-weight:500}
+.links a.active{color:var(--er-verde-pino);position:relative}
+.links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-22px;height:2px;background:var(--er-verde-pino)}
+.cta{padding:10px 18px;background:var(--er-verde-pino);color:var(--er-crema);border-radius:var(--radius-md);font-size:13px;font-weight:600;text-decoration:none}
+</style></head><body>
+<nav class="nav">
+  <div class="brand"><img src="../assets/logos/isotipo-verde.svg"/><span class="brand-tx">El Rey</span></div>
+  <div class="links">
+    <a href="#" class="active">Inicio</a>
+    <a href="#">Programa</a>
+    <a href="#">Metodología</a>
+    <a href="#">Equipo</a>
+    <a href="#">Contacto</a>
+  </div>
+  <a class="cta" href="#">Inscríbete</a>
+</nav>
+</body></html>

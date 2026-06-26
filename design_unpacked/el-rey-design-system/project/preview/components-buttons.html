@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>html,body{margin:0}body{background:var(--bg);padding:24px 28px}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{font-family:var(--font-body);font-size:14px;font-weight:600;line-height:1;padding:14px 22px;border-radius:var(--radius-md);border:1px solid transparent;cursor:pointer;transition:all var(--dur-base) var(--ease-standard);display:inline-flex;align-items:center;gap:8px}
+.primary{background:var(--er-verde-pino);color:var(--er-crema)}
+.primary:hover{background:#163029;box-shadow:var(--shadow-2)}
+.secondary{background:var(--er-verde-pino-10);color:var(--er-verde-pino);border-color:transparent}
+.secondary:hover{background:var(--er-verde-pino-20)}
+.ghost{background:transparent;color:var(--er-verde-pino);border-color:var(--line-strong)}
+.ghost:hover{background:var(--er-verde-pino-10);border-color:transparent}
+.link{background:transparent;color:var(--er-verde-pino);padding:14px 4px;border:0;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.row + .row{margin-top:14px}
+.lbl{font-family:var(--font-body);font-size:11px;color:var(--fg-3);letter-spacing:0.08em;text-transform:uppercase;width:72px}
+</style></head><body>
+<div class="row">
+  <span class="lbl">Primary</span>
+  <button class="btn primary">Inscribir a mi hijo</button>
+  <button class="btn primary">Saber más →</button>
+  <button class="btn primary" disabled style="opacity:.4;cursor:not-allowed">Disabled</button>
+</div>
+<div class="row">
+  <span class="lbl">Secondary</span>
+  <button class="btn secondary">Ver programa</button>
+  <button class="btn ghost">Cancelar</button>
+  <button class="btn link">Más información</button>
+</div>
+</body></html>

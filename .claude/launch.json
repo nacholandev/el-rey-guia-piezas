@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "landing",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "serve", "landing", "-l", "4321"],
+      "port": 4321
+    },
+    {
+      "name": "el-rey-web",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "serve", "web", "-l", "5050"],
+      "port": 5050
+    }
+  ]
+}

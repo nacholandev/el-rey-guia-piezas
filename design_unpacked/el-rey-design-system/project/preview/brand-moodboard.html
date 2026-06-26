@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body{margin:0}
+  body{background:var(--bg);padding:16px}
+  .mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:84px;gap:6px}
+  .mosaic span{display:block;border-radius:6px;overflow:hidden;background:var(--er-verde-pino-10);box-shadow:var(--shadow-1)}
+  .mosaic img{width:100%;height:100%;object-fit:cover;display:block}
+  .w2{grid-column:span 2}
+  .h2{grid-row:span 2}
+</style></head><body>
+<div class="mosaic">
+  <span class="w2 h2"><img src="../assets/images/bauhaus-chess.jpg" alt=""/></span>
+  <span><img src="../assets/images/manray-chess.jpg" alt=""/></span>
+  <span><img src="../assets/images/skyline-chess-london.jpg" alt=""/></span>
+  <span><img src="../assets/images/skyline-chess-nyc.jpg" alt=""/></span>
+  <span><img src="../assets/images/arquitectura-trevi.jpg" alt=""/></span>
+  <span class="w2"><img src="../assets/images/skyline-detail.webp" alt=""/></span>
+  <span><img src="../assets/images/bauhaus-set-white.jpg" alt=""/></span>
+  <span><img src="../assets/images/figurative-chess.jpg" alt=""/></span>
+</div>
+</body></html>

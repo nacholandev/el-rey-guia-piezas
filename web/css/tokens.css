@@ -1,0 +1,138 @@
+/* ============================================================================
+   El Rey — Design Tokens (palette + typography + spacing + elevation)
+   Distilled from el-rey-design-system/colors_and_type.css.
+   Fonts (Nunito + Inter) are loaded via Google Fonts <link> in each page,
+   instead of the self-hosted TTFs, to keep the MVP deploy light.
+   ========================================================================= */
+
+:root {
+  /* ─── Brand palette ─────────────────────────────────────────────────── */
+  --er-verde-pino:   #1C3D34;  /* primary institutional · text on light     */
+  --er-malva:        #6B4966;  /* editorial accent / warmth                 */
+  --er-azul-marino:  #1B2A4A;  /* secondary deep                            */
+  --er-crema:        #F3EFE6;  /* primary light surface                     */
+  --er-gris-frio:    #8C8F94;  /* neutral mid                               */
+  --er-blanco:       #FFFFFF;
+  --er-negro:        #000000;
+
+  /* ─── Tonal extensions ──────────────────────────────────────────────── */
+  --er-verde-pino-90: #2C4E45;
+  --er-verde-pino-80: #466860;
+  --er-verde-pino-60: #88A39C;
+  --er-verde-pino-20: #D8E0DD;
+  --er-verde-pino-10: #ECF0EE;
+  --er-malva-90:     #7C5A77;
+  --er-malva-20:     #E2D8DF;
+  --er-malva-10:     #F1ECEF;
+  --er-azul-90:      #2B3C5E;
+  --er-crema-deep:   #E8E2D2;
+  --er-crema-soft:   #FAF7F1;
+
+  /* ─── Semantic colors ───────────────────────────────────────────────── */
+  --bg:              var(--er-crema);
+  --bg-soft:         var(--er-crema-soft);
+  --bg-elevated:     var(--er-blanco);
+  --bg-inverse:      var(--er-verde-pino);
+
+  --fg-1:            var(--er-verde-pino);
+  --fg-2:            var(--er-verde-pino-80);
+  --fg-3:            var(--er-gris-frio);
+  --fg-on-dark:      var(--er-crema);
+  --fg-on-dark-2:    rgba(243, 239, 230, 0.72);
+
+  --accent:          var(--er-verde-pino);
+  --accent-soft:     var(--er-verde-pino-10);
+  --warm:            var(--er-malva);
+  --deep:            var(--er-azul-marino);
+
+  --line:            var(--er-crema-deep);
+  --line-strong:     rgba(28, 61, 52, 0.16);
+  --line-on-dark:    rgba(243, 239, 230, 0.18);
+  --focus-ring:      rgba(28, 61, 52, 0.32);
+
+  /* ─── Typography ────────────────────────────────────────────────────── */
+  --font-display:    'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body:       'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:       ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --fs-display:      clamp(48px, 6.4vw, 88px);
+  --fs-h1:           clamp(36px, 4.2vw, 56px);
+  --fs-h2:           clamp(28px, 3.0vw, 40px);
+  --fs-h3:           24px;
+  --fs-h4:           20px;
+  --fs-lead:         20px;
+  --fs-body:         16px;
+  --fs-small:        14px;
+  --fs-micro:        12px;
+  --fs-eyebrow:      12px;
+
+  --lh-display:      1.02;
+  --lh-heading:      1.12;
+  --lh-body:         1.55;
+  --lh-tight:        1.25;
+
+  --tracking-tight:  -0.02em;
+  --tracking-eyebrow: 0.18em;
+
+  /* ─── Spacing (4pt) ─────────────────────────────────────────────────── */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px; --sp-5: 24px;
+  --sp-6: 32px; --sp-7: 48px; --sp-8: 64px; --sp-9: 96px; --sp-10: 128px;
+
+  /* ─── Radii ─────────────────────────────────────────────────────────── */
+  --radius-xs: 4px; --radius-sm: 8px; --radius-md: 12px;
+  --radius-lg: 20px; --radius-xl: 28px; --radius-pill: 999px;
+
+  /* ─── Elevation (verde-pino tinted) ─────────────────────────────────── */
+  --shadow-1: 0 1px 2px rgba(28, 61, 52, 0.06);
+  --shadow-2: 0 2px 8px rgba(28, 61, 52, 0.08), 0 1px 2px rgba(28, 61, 52, 0.04);
+  --shadow-3: 0 12px 32px rgba(28, 61, 52, 0.10), 0 2px 6px rgba(28, 61, 52, 0.05);
+  --shadow-4: 0 24px 60px rgba(28, 61, 52, 0.16), 0 8px 16px rgba(28, 61, 52, 0.06);
+
+  /* ─── Motion ────────────────────────────────────────────────────────── */
+  --ease-standard: cubic-bezier(0.2, 0.0, 0.2, 1);
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 140ms; --dur-base: 220ms; --dur-slow: 420ms;
+}
+
+/* ─── Base typography helpers ─────────────────────────────────────────── */
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.er-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.er-eyebrow--on-dark { color: var(--fg-on-dark-2); }
+
+.er-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+.er-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.er-h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h3); line-height: var(--lh-tight); }
+.er-h4 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h4); line-height: var(--lh-tight); }
+.er-lead { font-family: var(--font-body); font-weight: 400; font-size: var(--fs-lead); line-height: 1.45; color: var(--fg-2); text-wrap: pretty; }
+.er-small { font-size: var(--fs-small); line-height: 1.5; color: var(--fg-2); }
+.er-micro { font-size: var(--fs-micro); line-height: 1.4; color: var(--fg-3); }

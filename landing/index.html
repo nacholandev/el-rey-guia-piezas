@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía gratis: cómo enseñar a tu hijo los movimientos del ajedrez · El Rey</title>
+  <meta name="description" content="Guía gratuita para padres. Enséñale a tu hijo cómo se mueve cada pieza del ajedrez —una pieza por página, en lenguaje de niño— aunque tú no sepas jugar." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Enséñale a tu hijo cómo se mueve cada pieza. Aunque tú no sepas jugar." />
+  <meta property="og:description" content="Guía gratuita para padres. Una pieza por página, explicada para que un niño la entienda y tú puedas guiarlo." />
+  <meta property="og:image" content="./assets/images/nino-tablero.jpg" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="./assets/logos/isotipo-verde.svg" />
+  <link rel="stylesheet" href="./assets/colors_and_type.css" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+
+  <!-- ── Top bar: isotipo solo (sin lockup horizontal) ───────────────────── -->
+  <header class="topbar">
+    <a class="topbar__brand" href="#" aria-label="El Rey — inicio">
+      <img src="./assets/logos/isotipo-verde.svg" alt="El Rey" width="36" height="36" />
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <!-- TODO: estas páginas aún no existen — enlaces placeholder -->
+      <a class="nav__link" href="#">Sobre nosotros</a>
+      <a class="nav__link" href="#">Servicios</a>
+      <a class="nav__link" href="#">Blog</a>
+      <a class="nav__cta btn btn--primary btn--sm" href="#contacto">Clases online</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="er-eyebrow hero__eyebrow">Guía gratuita para padres</p>
+        <h1 class="er-display hero__title">
+          Enséñale a tu hijo cómo se mueve cada pieza.
+          <span class="hero__title-soft">Aunque tú no sepas jugar.</span>
+        </h1>
+        <p class="er-lead hero__lead">
+          El rey, la dama, la torre, el alfil, el caballo y el peón —una pieza por
+          página, explicada para que un niño la entienda y tú puedas guiarlo paso a paso.
+        </p>
+
+        <!-- ── Email capture ──────────────────────────────────────────────
+             TODO (conectar proveedor): este formulario aún NO envía a ningún
+             lado. Para activarlo, reemplaza el bloque JS en /assets/app.js
+             con el endpoint de tu proveedor (Kit / Mailchimp / Formspree).
+        -->
+        <form id="capture" class="capture" novalidate>
+          <label class="sr-only" for="email">Tu correo electrónico</label>
+          <input id="email" name="email" type="email" required
+                 placeholder="tu@correo.com" autocomplete="email" class="capture__input" />
+          <button type="submit" class="btn btn--primary">Descargar la guía</button>
+        </form>
+        <p class="capture__micro er-micro" id="capture-micro">
+          Sin spam. Solo ajedrez que forma.
+        </p>
+      </div>
+
+      <figure class="hero__media">
+        <img src="./assets/images/nino-tablero.jpg" alt="Niño moviendo una pieza sobre el tablero de ajedrez" />
+        <figcaption class="hero__quote er-quote">El ajedrez no es el fin, es el medio.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ── Qué incluye: las 6 piezas ────────────────────────────────────── -->
+    <section class="pieces">
+      <p class="er-eyebrow pieces__eyebrow">Lo que aprende, pieza por pieza</p>
+      <ul class="pieces__grid">
+        <li class="piece piece--peon"><img class="piece__ico" src="./assets/pieces/peon-verde.svg" alt="" /><span class="er-h4">Peón</span><span class="er-small">Avanza, nunca retrocede</span></li>
+        <li class="piece piece--torre"><img class="piece__ico" src="./assets/pieces/torre-verde.svg" alt="" /><span class="er-h4">Torre</span><span class="er-small">Líneas rectas</span></li>
+        <li class="piece piece--caballo"><img class="piece__ico" src="./assets/pieces/caballo-verde.svg" alt="" /><span class="er-h4">Caballo</span><span class="er-small">Salta en L</span></li>
+        <li class="piece piece--alfil"><img class="piece__ico" src="./assets/pieces/alfil-verde.svg" alt="" /><span class="er-h4">Alfil</span><span class="er-small">Diagonales</span></li>
+        <li class="piece piece--dama"><img class="piece__ico" src="./assets/pieces/reina-verde.svg" alt="" /><span class="er-h4">Dama</span><span class="er-small">En todas direcciones</span></li>
+        <li class="piece piece--rey"><img class="piece__ico" src="./assets/pieces/rey-verde.svg" alt="" /><span class="er-h4">Rey</span><span class="er-small">Un paso, pero todo gira en torno a él</span></li>
+      </ul>
+    </section>
+
+    <!-- ── Cierre / reafirmación CTA ─────────────────────────────────────── -->
+    <section class="closer">
+      <h2 class="er-h2 closer__title">Una tarde. Seis piezas. Un niño que entiende el tablero.</h2>
+      <p class="er-lead closer__lead">
+        No enseñamos a jugar: enseñamos a pensar. Esta guía es el primer paso —y es
+        nuestro, para ti, gratis.
+      </p>
+      <a href="#contacto" class="btn btn--ghost" id="closer-cta">Reservar una clase</a>
+    </section>
+
+    <!-- ── FAQ · despejar dudas antes del formulario ─────────────────────── -->
+    <section class="faq">
+      <div class="faq__head">
+        <p class="er-eyebrow">Antes de empezar</p>
+        <h2 class="er-h2">Preguntas que suelen hacernos</h2>
+      </div>
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary class="faq__q">¿Mi hijo necesita saber jugar para empezar?</summary>
+          <div class="faq__a er-body">No. Empezamos desde cero. La guía de las piezas es justo el primer paso; a partir de ahí lo acompañamos a su ritmo.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">¿Desde qué edad pueden entrar?</summary>
+          <div class="faq__a er-body">Trabajamos con niños desde los 5 años. Lo importante no es la edad, sino las ganas de pensar y jugar.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">¿Y si a mi hijo le cuesta concentrarse o no encaja en lo tradicional?</summary>
+          <div class="faq__a er-body">Ese es precisamente nuestro espacio. Aquí los niños que no encajan encuentran un lugar donde desarrollarse sin juicio, con acompañamiento real en aciertos y errores.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">¿Las clases online funcionan igual que las presenciales?</summary>
+          <div class="faq__a er-body">Sí. La metodología es la misma; cambia el formato. En la solicitud nos dices si prefieres online o presencial y lo adaptamos a tu familia.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">¿Cuánto duran y con qué frecuencia son las clases?</summary>
+          <div class="faq__a er-body">Lo definimos contigo según la edad y el nivel del niño. La primera conversación sirve justo para encontrar el ritmo adecuado.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">¿Tiene algún costo dejar mis datos?</summary>
+          <div class="faq__a er-body">Ninguno. Dejar tus datos no es un compromiso: es el inicio de una conversación. Te contactamos para conocer a tu hijo y contarte cómo trabajamos.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── Reseñas · diseño inspirado en el tablero (fondo verde pino) ────── -->
+    <section class="reviews">
+      <div class="reviews__head">
+        <p class="er-eyebrow">Lo que dicen las familias</p>
+        <h2 class="er-h2 reviews__title">Confianza, jugada a jugada</h2>
+      </div>
+      <div class="reviews__rule" aria-hidden="true"></div>
+
+      <!-- TODO: RESEÑAS PLACEHOLDER — reemplazar con testimonios reales antes de promocionar -->
+      <div class="reviews__board">
+        <figure class="review review--light">
+          <img class="review__piece" src="./assets/pieces/peon-verde.svg" alt="" />
+          <blockquote class="review__quote">Mi hijo llegó sin querer hablar con nadie. Hoy explica sus jugadas en la mesa. El cambio no fue el ajedrez: fue sentirse capaz.</blockquote>
+          <figcaption class="review__by er-small">Madre de un alumno · 7 años</figcaption>
+        </figure>
+
+        <figure class="review review--dark">
+          <img class="review__piece" src="./assets/pieces/caballo-crema.svg" alt="" />
+          <blockquote class="review__quote">No buscábamos un campeón, buscábamos estructura. Aquí la encontró, y de paso aprendió a perder sin romperse.</blockquote>
+          <figcaption class="review__by er-small">Padre de una alumna · 10 años</figcaption>
+        </figure>
+
+        <figure class="review review--dark">
+          <img class="review__piece" src="./assets/pieces/alfil-crema.svg" alt="" />
+          <blockquote class="review__quote">La paciencia del profesor con los niños que no encajan es real. Acompaña en los aciertos y en los errores por igual.</blockquote>
+          <figcaption class="review__by er-small">Madre de un alumno · 9 años</figcaption>
+        </figure>
+
+        <figure class="review review--light">
+          <img class="review__piece" src="./assets/pieces/reina-verde.svg" alt="" />
+          <blockquote class="review__quote">Empezó por curiosidad y terminó pensando distinto: mide consecuencias antes de actuar. Eso vale más que cualquier trofeo.</blockquote>
+          <figcaption class="review__by er-small">Padre de un alumno · 12 años</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ── Contacto · reserva de clase (online / presencial) ─────────────── -->
+    <section class="contact" id="contacto">
+      <div class="contact__inner">
+        <div class="contact__intro">
+          <p class="er-eyebrow">Reserva tu lugar</p>
+          <h2 class="er-h2">Cuéntanos sobre tu hijo</h2>
+          <p class="er-lead">Déjanos tus datos y el tipo de clase que buscas. Te contactamos para conocerlo y encontrar su lugar en el tablero.</p>
+        </div>
+
+        <!-- TODO: conectar a proveedor (Formspree/Kit/…). Hoy NO envía: solo confirma en pantalla. Ver app.js -->
+        <form class="contact__form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="c-name">Nombre y apellido</label>
+            <input id="c-name" name="name" type="text" autocomplete="name" required placeholder="Tu nombre" />
+          </div>
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input id="c-email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com" />
+          </div>
+          <div class="field">
+            <label for="c-phone">WhatsApp <span class="field__opt">(opcional)</span></label>
+            <input id="c-phone" name="phone" type="tel" autocomplete="tel" placeholder="+58 000-000-0000" />
+          </div>
+          <div class="field">
+            <label for="c-age">Edad del niño <span class="field__opt">(opcional)</span></label>
+            <input id="c-age" name="age" type="number" min="3" max="17" placeholder="Ej. 8" />
+          </div>
+
+          <fieldset class="field field--full segmented-wrap">
+            <legend>Tipo de clase</legend>
+            <div class="segmented" role="radiogroup">
+              <label class="seg">
+                <input type="radio" name="modalidad" value="online" checked />
+                <span>Online</span>
+              </label>
+              <label class="seg">
+                <input type="radio" name="modalidad" value="presencial" />
+                <span>Presencial</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="field field--full">
+            <label for="c-msg">Mensaje <span class="field__opt">(opcional)</span></label>
+            <textarea id="c-msg" name="message" rows="3" placeholder="Cuéntanos qué buscas para tu hijo"></textarea>
+          </div>
+
+          <div class="field--full contact__actions">
+            <button type="submit" class="btn btn--primary">Enviar solicitud</button>
+            <p class="contact__micro er-micro" id="contact-micro">Te respondemos en 24–48 h. Sin compromiso.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer: logo vertical completo ──────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img class="footer__logo" src="./assets/logos/logo-crema.svg" alt="El Rey" width="72" height="72" />
+        <p class="footer__line er-small">El ajedrez no es el fin, es el medio.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Páginas">
+        <h3 class="footer__title er-eyebrow">Navegación</h3>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#email">Clases online</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col" aria-label="Legal">
+        <h3 class="footer__title er-eyebrow">Legal</h3>
+        <ul>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Política de cookies</a></li>
+        </ul>
+      </nav>
+
+      <!-- TODO: reemplazar con los datos de contacto reales de El Rey -->
+      <div class="footer__col" aria-label="Contacto">
+        <h3 class="footer__title er-eyebrow">Contacto</h3>
+        <ul>
+          <li><a href="mailto:hola@elrey.com">hola@elrey.com</a></li>
+          <li><a href="https://wa.me/58000000000">WhatsApp: +58 000-000-0000</a></li>
+          <li><span>Venezuela</span></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <p class="footer__legal er-micro">© 2026 El Rey · Academia de ajedrez</p>
+    </div>
+  </footer>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>

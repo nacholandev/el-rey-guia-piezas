@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Credencial de Atleta · El Rey</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<style>
+  html, body { margin: 0; }
+  body {
+    background: var(--er-crema-soft);
+    min-height: 100vh;
+    padding: 56px 24px;
+    font-family: var(--font-body);
+  }
+  .stage {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .stage__head { text-align: center; margin-bottom: 40px; }
+  .stage__eyebrow {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--fg-3); margin-bottom: 10px;
+  }
+  .stage__title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(32px, 4vw, 44px); line-height: 1.05;
+    letter-spacing: -0.02em; color: var(--fg-1); margin: 0;
+  }
+  .stage__lead {
+    margin: 14px auto 0; max-width: 56ch;
+    color: var(--fg-2); font-size: 15px; line-height: 1.55;
+  }
+
+  .cards {
+    display: flex; gap: 48px; justify-content: center; align-items: flex-start;
+    flex-wrap: wrap; margin-top: 16px;
+  }
+  .card-col { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .card-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--fg-3);
+  }
+
+  /* ── Credential card ──────────────────────────────────────────────── */
+  .card {
+    width: 360px; height: 560px;
+    border-radius: 18px;
+    background: var(--er-crema);
+    box-shadow: 0 24px 60px rgba(28,61,52,0.18), 0 6px 16px rgba(28,61,52,0.08);
+    overflow: hidden;
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+
+  /* ── FRONT ────────────────────────────────────────────────────────── */
+  .front__top {
+    background: var(--er-verde-pino);
+    color: var(--er-crema);
+    padding: 20px 22px 18px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: relative;
+  }
+  .front__top-mark { width: 40px; height: 40px; display: block; }
+  .fide-mark {
+    border: 1px solid rgba(243,239,230,0.4);
+    padding: 4px 8px; border-radius: 4px;
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 11px; letter-spacing: 0.04em;
+    color: var(--er-crema);
+  }
+  .fide-mark small { display: block; font-size: 7px; font-weight: 500; letter-spacing: 0.18em; opacity: 0.75; margin-top: 1px; }
+
+  .front__role-strip {
+    background: var(--er-verde-pino);
+    color: var(--er-crema);
+    padding: 12px 22px 14px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    border-top: 1px solid rgba(243,239,230,0.16);
+    border-bottom: 1px solid rgba(243,239,230,0.16);
+  }
+  .front__role-strip b { color: var(--er-crema); font-weight: 700; }
+  .front__role-strip span { color: rgba(243,239,230,0.7); font-weight: 500; }
+
+  .front__photo {
+    background: linear-gradient(180deg, #d8d3c5 0%, #c8c2b1 100%);
+    height: 220px; position: relative; overflow: hidden;
+    display: flex; align-items: flex-end; justify-content: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .front__photo-piece {
+    position: absolute; bottom: -30px; left: 50%;
+    transform: translateX(-50%);
+    height: 240px; opacity: 0.38;
+  }
+  .front__photo-tag {
+    position: absolute; top: 12px; left: 12px;
+    background: rgba(28,61,52,0.86); backdrop-filter: blur(8px);
+    color: var(--er-crema);
+    font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;
+    padding: 5px 9px; border-radius: 4px;
+  }
+  .front__photo-fed {
+    position: absolute; top: 12px; right: 12px;
+    background: var(--er-crema);
+    color: var(--fg-1);
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 13px; letter-spacing: 0.08em;
+    padding: 5px 10px; border-radius: 4px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .fed-flag {
+    width: 16px; height: 12px;
+    background: linear-gradient(180deg, #FCD116 0 33.33%, #00247D 33.33% 66.66%, #CE1126 66.66%);
+    border-radius: 1px;
+  }
+
+  .front__body { padding: 16px 22px 18px; flex: 1; display: flex; flex-direction: column; }
+  .front__name-row {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 12px; margin-bottom: 4px;
+  }
+  .front__given {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--fg-3); font-weight: 500;
+  }
+  .front__title-pill {
+    background: var(--er-verde-pino-10);
+    color: var(--er-verde-pino);
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 11px; letter-spacing: 0.08em;
+    padding: 4px 8px; border-radius: 4px;
+  }
+  .front__name {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 22px; line-height: 1.05; letter-spacing: -0.02em;
+    color: var(--fg-1); margin: 2px 0 12px;
+    text-transform: uppercase;
+  }
+  .front__name em { display: block; font-style: normal; font-weight: 600; font-size: 16px; color: var(--fg-2); margin-top: 2px; letter-spacing: -0.01em; }
+
+  .meta {
+    margin-top: auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px;
+    border-top: 1px solid var(--line); padding-top: 12px;
+  }
+  .meta__cell { display: flex; flex-direction: column; gap: 2px; }
+  .meta__k { font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-3); font-weight: 500; }
+  .meta__v { font-family: var(--font-display); font-weight: 700; font-size: 13px; color: var(--fg-1); line-height: 1.1; }
+  .meta__v.mono { font-family: var(--font-mono); font-weight: 500; letter-spacing: 0.04em; }
+
+  /* ── BACK ─────────────────────────────────────────────────────────── */
+  .back { background: var(--er-crema); }
+  .back__head {
+    padding: 16px 22px 14px;
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .back__head-l {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--fg-3); font-weight: 500;
+  }
+  .back__head-r {
+    font-family: var(--font-mono); font-size: 11px; color: var(--fg-2); letter-spacing: 0.04em;
+  }
+
+  .ratings { padding: 18px 22px; border-bottom: 1px solid var(--line); }
+  .ratings__title {
+    font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--fg-3); font-weight: 500; margin-bottom: 12px;
+  }
+  .ratings__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .rating { background: var(--er-crema-soft); border-radius: 8px; padding: 10px 12px; }
+  .rating__k { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-3); font-weight: 500; margin-bottom: 4px; }
+  .rating__v { font-family: var(--font-display); font-weight: 800; font-size: 22px; color: var(--fg-1); line-height: 1; letter-spacing: -0.01em; }
+  .rating__delta { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); margin-top: 4px; letter-spacing: 0.02em; }
+  .rating__delta.up { color: #2C6E4B; }
+  .rating__delta.down { color: #9E4B3E; }
+
+  .info-rows { padding: 16px 22px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--line); }
+  .info-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .info-k { font-size: 11px; color: var(--fg-3); letter-spacing: 0.04em; }
+  .info-v { font-family: var(--font-body); font-weight: 600; font-size: 12.5px; color: var(--fg-1); text-align: right; }
+  .info-v.mono { font-family: var(--font-mono); font-weight: 500; }
+
+  .back__bottom {
+    padding: 14px 22px 18px; display: flex; align-items: center; gap: 14px;
+  }
+  .qr {
+    width: 88px; height: 88px;
+    background:
+      conic-gradient(from 0deg at 18% 18%, var(--fg-1) 0 25%, transparent 0 100%) 0 0/30% 30% no-repeat,
+      conic-gradient(from 0deg at 82% 18%, var(--fg-1) 0 25%, transparent 0 100%) 100% 0/30% 30% no-repeat,
+      conic-gradient(from 0deg at 18% 82%, var(--fg-1) 0 25%, transparent 0 100%) 0 100%/30% 30% no-repeat,
+      repeating-conic-gradient(var(--fg-1) 0 25%, transparent 0 50%) center/14% 14%,
+      var(--er-blanco);
+    border-radius: 4px; border: 1px solid var(--line);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .qr::after {
+    content: ""; position: absolute; inset: 38% 38%;
+    background: var(--er-blanco);
+    border-radius: 2px;
+  }
+  .qr-meta { flex: 1; min-width: 0; }
+  .qr-meta b { font-family: var(--font-display); font-weight: 700; font-size: 11px; color: var(--fg-1); display: block; margin-bottom: 4px; }
+  .qr-meta p { font-size: 9.5px; line-height: 1.45; color: var(--fg-2); margin: 0; }
+
+  .fineprint {
+    padding: 0 22px 16px;
+    font-size: 8px; line-height: 1.5;
+    color: var(--fg-3); text-align: justify;
+    letter-spacing: 0.01em;
+  }
+  .fineprint b { color: var(--fg-2); font-weight: 600; }
+
+  .back__foot {
+    background: var(--er-verde-pino);
+    color: var(--er-crema);
+    padding: 10px 22px;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: auto;
+  }
+  .back__foot-l { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.78; }
+  .back__foot-r { font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.04em; }
+
+  /* ── Specs panel ──────────────────────────────────────────────────── */
+  .specs {
+    margin-top: 56px; padding: 28px 32px;
+    background: var(--er-blanco);
+    border-radius: 16px; border: 1px solid var(--line);
+    max-width: 1080px; margin-left: auto; margin-right: auto;
+  }
+  .specs h3 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 18px; letter-spacing: -0.01em; margin: 0 0 14px;
+  }
+  .specs__grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 40px;
+    font-size: 13px;
+  }
+  .specs__grid h4 {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--fg-3); margin: 0 0 8px; font-weight: 500;
+  }
+  .specs__grid ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .specs__grid li { display: flex; justify-content: space-between; gap: 12px; color: var(--fg-2); }
+  .specs__grid li b { color: var(--fg-1); font-weight: 600; font-family: var(--font-body); }
+  .specs__grid li .k { color: var(--fg-3); }
+
+  /* ── Decoration / chess pattern ──────────────────────────────────── */
+  .front__corner {
+    position: absolute; right: -28px; bottom: -28px;
+    width: 96px; height: 96px;
+    background: repeating-conic-gradient(var(--er-verde-pino-10) 0 25%, transparent 0 50%);
+    background-size: 24px 24px;
+    opacity: 0.7; transform: rotate(8deg);
+    border-radius: 6px;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="stage__head">
+    <div class="stage__eyebrow">Credencial · FIDE-compliant</div>
+    <h1 class="stage__title">Credencial de Atleta</h1>
+    <p class="stage__lead">
+      Formato vertical tipo lanyard (100 × 145 mm). Incluye todos los datos
+      exigidos por la Federación Internacional de Ajedrez para acreditación
+      de jugadores: ID FIDE, federación, título, ratings vigentes, fecha de
+      nacimiento, sexo y código de verificación.
+    </p>
+  </div>
+
+  <div class="cards">
+
+    <!-- ─────────── FRONT ─────────── -->
+    <div class="card-col">
+      <div class="card front">
+        <div class="front__top">
+          <img src="assets/logos/isotipo-crema.svg" alt="El Rey" class="front__top-mark" />
+          <div class="fide-mark">
+            FIDE
+            <small>F.I.D.E.</small>
+          </div>
+        </div>
+        <div class="front__role-strip">
+          <b>Atleta · Jugador</b>
+          <span>2025 — 2026</span>
+        </div>
+
+        <div class="front__photo">
+          <span class="front__photo-tag">Foto del atleta</span>
+          <div class="front__photo-fed"><span class="fed-flag"></span>VEN</div>
+          <img src="assets/pieces/caballo-verde.svg" class="front__photo-piece" alt="" />
+        </div>
+
+        <div class="front__body">
+          <div class="front__name-row">
+            <span class="front__given">Apellidos · Nombre</span>
+            <span class="front__title-pill">CM</span>
+          </div>
+          <div class="front__name">
+            Martínez Pérez
+            <em>Lucas</em>
+          </div>
+
+          <div class="meta">
+            <div class="meta__cell">
+              <span class="meta__k">FIDE ID</span>
+              <span class="meta__v mono">24 815 003</span>
+            </div>
+            <div class="meta__cell">
+              <span class="meta__k">Federación</span>
+              <span class="meta__v">VEN</span>
+            </div>
+            <div class="meta__cell">
+              <span class="meta__k">Fecha nac.</span>
+              <span class="meta__v mono">14 · 03 · 2012</span>
+            </div>
+            <div class="meta__cell">
+              <span class="meta__k">Sexo</span>
+              <span class="meta__v">M</span>
+            </div>
+          </div>
+        </div>
+        <div class="front__corner"></div>
+      </div>
+      <div class="card-label">Anverso</div>
+    </div>
+
+    <!-- ─────────── BACK ─────────── -->
+    <div class="card-col">
+      <div class="card back">
+        <div class="back__head">
+          <span class="back__head-l">Validez de acreditación</span>
+          <span class="back__head-r">01 · 09 · 2025 — 31 · 08 · 2026</span>
+        </div>
+
+        <div class="ratings">
+          <div class="ratings__title">Ratings FIDE — vigentes a 01/01/2026</div>
+          <div class="ratings__row">
+            <div class="rating">
+              <div class="rating__k">Standard</div>
+              <div class="rating__v">1842</div>
+              <div class="rating__delta up">▲ 38</div>
+            </div>
+            <div class="rating">
+              <div class="rating__k">Rapid</div>
+              <div class="rating__v">1796</div>
+              <div class="rating__delta up">▲ 22</div>
+            </div>
+            <div class="rating">
+              <div class="rating__k">Blitz</div>
+              <div class="rating__v">1714</div>
+              <div class="rating__delta down">▼ 14</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-rows">
+          <div class="info-row"><span class="info-k">Título FIDE</span><span class="info-v">Candidate Master (CM)</span></div>
+          <div class="info-row"><span class="info-k">Estado</span><span class="info-v">Activo · Federado</span></div>
+          <div class="info-row"><span class="info-k">Categoría</span><span class="info-v">Sub-14 · Open</span></div>
+          <div class="info-row"><span class="info-k">Club</span><span class="info-v">El Rey</span></div>
+          <div class="info-row"><span class="info-k">Nº federativo</span><span class="info-v mono">VEN-00-24-815003</span></div>
+        </div>
+
+        <div class="back__bottom">
+          <div class="qr" aria-label="Código QR de verificación"></div>
+          <div class="qr-meta">
+            <b>Verificación FIDE</b>
+            <p>Escanea para validar la credencial en
+            <i>ratings.fide.com</i>. El código vincula con el perfil oficial del atleta.</p>
+          </div>
+        </div>
+
+        <p class="fineprint">
+          <b>Aviso.</b> Esta credencial es propiedad de El Rey y de
+          la Federación Internacional de Ajedrez (FIDE). De uso personal e
+          intransferible. En caso de pérdida, comunicar a
+          <i>credenciales@elrey.es</i>. Datos de rating según el
+          listado FIDE vigente; pueden variar mensualmente.
+        </p>
+
+        <div class="back__foot">
+          <span class="back__foot-l">Emite · El Rey</span>
+          <span class="back__foot-r">Nº 0024-1842-CM</span>
+        </div>
+      </div>
+      <div class="card-label">Reverso</div>
+    </div>
+
+  </div>
+
+  <!-- ─────────── Specs ─────────── -->
+  <div class="specs">
+    <h3>Campos requeridos por la FIDE — checklist</h3>
+    <div class="specs__grid">
+      <div>
+        <h4>Identificación</h4>
+        <ul>
+          <li><span class="k">FIDE ID</span><b>✓ Anverso</b></li>
+          <li><span class="k">Apellidos &amp; nombre</span><b>✓ Anverso</b></li>
+          <li><span class="k">Federación (3 letras)</span><b>✓ ESP</b></li>
+          <li><span class="k">Sexo</span><b>✓ Anverso</b></li>
+          <li><span class="k">Fecha de nacimiento</span><b>✓ Anverso</b></li>
+          <li><span class="k">Foto reciente</span><b>✓ Anverso</b></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Acreditación deportiva</h4>
+        <ul>
+          <li><span class="k">Título FIDE</span><b>✓ CM</b></li>
+          <li><span class="k">Rating Standard</span><b>✓ 1842</b></li>
+          <li><span class="k">Rating Rapid</span><b>✓ 1796</b></li>
+          <li><span class="k">Rating Blitz</span><b>✓ 1714</b></li>
+          <li><span class="k">Estado / activo</span><b>✓ Reverso</b></li>
+          <li><span class="k">Categoría</span><b>✓ Sub-14</b></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Validez y seguridad</h4>
+        <ul>
+          <li><span class="k">Período de validez</span><b>✓ Reverso</b></li>
+          <li><span class="k">QR de verificación</span><b>✓ ratings.fide.com</b></li>
+          <li><span class="k">Nº federativo único</span><b>✓ Reverso</b></li>
+          <li><span class="k">Entidad emisora</span><b>✓ El Rey</b></li>
+          <li><span class="k">Aviso legal</span><b>✓ Reverso</b></li>
+          <li><span class="k">Formato</span><b>100 × 145 mm</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

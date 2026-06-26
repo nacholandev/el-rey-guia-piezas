@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>html,body{margin:0}body{background:var(--bg);padding:30px 28px;font-family:var(--font-body)}
+.row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:end}
+.tile{display:flex;flex-direction:column;align-items:center;gap:14px}
+.card{width:100%;height:84px;background:var(--bg-elevated);border-radius:var(--radius-md)}
+.s1{box-shadow:var(--shadow-1)}
+.s2{box-shadow:var(--shadow-2)}
+.s3{box-shadow:var(--shadow-3)}
+.s4{box-shadow:var(--shadow-4)}
+.nm{font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--fg-1)}
+.tk{font-family:var(--font-mono);font-size:10px;color:var(--fg-3)}
+</style></head><body>
+<div class="row">
+  <div class="tile"><div class="card s1"></div><div class="nm">Shadow 1</div><div class="tk">Resting card</div></div>
+  <div class="tile"><div class="card s2"></div><div class="nm">Shadow 2</div><div class="tk">Hover · subtle lift</div></div>
+  <div class="tile"><div class="card s3"></div><div class="nm">Shadow 3</div><div class="tk">Dropdown · popover</div></div>
+  <div class="tile"><div class="card s4"></div><div class="nm">Shadow 4</div><div class="tk">Modal · floating</div></div>
+</div>
+</body></html>

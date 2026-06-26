@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body{margin:0}
+  body{background:var(--bg);padding:20px 24px;font-family:var(--font-body)}
+  .row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .sw{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);background:var(--bg-elevated)}
+  .chip{height:96px;display:flex;align-items:flex-end;padding:12px}
+  .meta{padding:10px 12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .name{font-weight:600;color:var(--fg-1);font-size:13px}
+  .hex{font-family:var(--font-mono);font-size:11px;color:var(--fg-3);letter-spacing:0.02em}
+  .on-dark{color:var(--fg-on-dark)}
+</style></head>
+<body>
+<div class="row">
+  <div class="sw">
+    <div class="chip" style="background:var(--er-verde-pino)"><span class="er-micro on-dark">Primary</span></div>
+    <div class="meta"><span class="name">Verde Pino</span><span class="hex">#1C3D34</span></div>
+  </div>
+  <div class="sw">
+    <div class="chip" style="background:var(--er-crema)"><span class="er-micro">Surface</span></div>
+    <div class="meta"><span class="name">Crema</span><span class="hex">#F3EFE6</span></div>
+  </div>
+  <div class="sw">
+    <div class="chip" style="background:var(--er-blanco);box-shadow:inset 0 0 0 1px var(--line)"><span class="er-micro">Functional</span></div>
+    <div class="meta"><span class="name">Blanco</span><span class="hex">#FFFFFF</span></div>
+  </div>
+</div>
+</body></html>
