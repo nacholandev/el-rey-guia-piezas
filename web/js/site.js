@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  /* Sticky header: condense + blur after a little scroll */
+  /* Sticky header */
   var header = document.querySelector('.er-header');
   if (header) {
     var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 12); };
@@ -10,7 +10,23 @@
     onScroll();
   }
 
-  /* Reveal on scroll — subtle fade + y-translate (brand: never bouncy) */
+  /* Hamburger menu */
+  var hamburger = document.querySelector('.er-hamburger');
+  var nav = document.querySelector('.er-nav');
+  if (hamburger && nav) {
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('is-open');
+      nav.classList.toggle('is-open');
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        hamburger.classList.remove('is-open');
+        nav.classList.remove('is-open');
+      });
+    });
+  }
+
+  /* Reveal on scroll */
   var reveals = document.querySelectorAll('.er-reveal');
   if ('IntersectionObserver' in window && reveals.length) {
     var io = new IntersectionObserver(function (entries) {
@@ -23,7 +39,7 @@
     reveals.forEach(function (el) { el.classList.add('is-in'); });
   }
 
-  /* Product gallery — thumb switches main image */
+  /* Product gallery */
   var main = document.querySelector('[data-gallery-main]');
   var thumbs = document.querySelectorAll('[data-thumb]');
   thumbs.forEach(function (t) {
@@ -36,7 +52,7 @@
     });
   });
 
-  /* Product variant selector (the three levels) */
+  /* Product variant selector */
   var opts = document.querySelectorAll('[data-variant]');
   var chosen = document.querySelector('[data-chosen-variant]');
   opts.forEach(function (o) {
@@ -47,7 +63,7 @@
     });
   });
 
-  /* Accordion (product details / FAQ) */
+  /* Accordion */
   document.querySelectorAll('.er-acc__head').forEach(function (head) {
     head.addEventListener('click', function () {
       var item = head.closest('.er-acc__item');
@@ -57,7 +73,7 @@
     });
   });
 
-  /* Forms — MVP: no backend yet, confirm inline (swap for Shopify/Formspree later) */
+  /* Forms — MVP confirm inline */
   document.querySelectorAll('[data-contact-form]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -71,5 +87,21 @@
         thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     });
+  });
+
+  /* Sparkle trail on mouse move (kids delight) */
+  var colors = ['#FFD93D', '#4ECDC4', '#A855F7', '#FF6B35', '#F472B6', '#84CC16'];
+  var lastSparkle = 0;
+  document.addEventListener('mousemove', function (e) {
+    var now = Date.now();
+    if (now - lastSparkle < 80) return;
+    lastSparkle = now;
+    var dot = document.createElement('div');
+    dot.className = 'er-sparkle';
+    dot.style.left = e.clientX + 'px';
+    dot.style.top = e.clientY + 'px';
+    dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+    document.body.appendChild(dot);
+    setTimeout(function () { dot.remove(); }, 600);
   });
 })();
