@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blog — El Rey, escuela de ajedrez</title>
+<meta name="description" content="Artículos, consejos y recursos sobre ajedrez para niños y familias. Aprende, juega y crece con El Rey." />
+<link rel="icon" href="assets/logos/isotipo-verde.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/site.css" />
+<link rel="stylesheet" href="css/kids.css" />
+</head>
+<body>
+
+<header class="er-header">
+  <div class="er-header__inner">
+    <a class="er-brand" href="index.html" aria-label="El Rey"><img src="assets/logos/isotipo-verde.svg" alt="El Rey" class="er-brand__mark" /></a>
+    <nav class="er-nav">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="programa.html">Programa</a>
+      <a href="blog.html" class="is-active">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <button class="er-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="contacto.html" class="er-btn er-btn--primary er-btn--sm">Reservar prueba</a>
+  </div>
+</header>
+
+<main>
+  <!-- ── Hero ────────────────────────────────────────────────────────────── -->
+  <section class="er-hero" style="padding:100px 0 80px">
+    <div class="er-floating-pieces">
+      <img src="assets/pieces/alfil-azul.svg" alt="" />
+      <img src="assets/pieces/caballo-malva.svg" alt="" />
+      <img src="assets/pieces/peon-crema.svg" alt="" />
+    </div>
+    <div class="er-container er-hero__inner">
+      <div class="er-eyebrow er-hero__eyebrow">Blog</div>
+      <h1 class="er-hero__title" style="font-size:clamp(40px,5.4vw,72px)">Historias, consejos<br />y <em>jugadas maestras.</em></h1>
+      <p class="er-hero__lead">Artículos para padres curiosos y niños que piensan. Ajedrez, educación y crecimiento.</p>
+    </div>
+  </section>
+
+  <!-- ── Featured article ────────────────────────────────────────────────── -->
+  <section class="er-section er-section--crema">
+    <div class="er-container er-reveal">
+      <div class="er-eyebrow">Destacado</div>
+      <div class="er-blog-featured">
+        <div class="er-blog-featured__img">
+          <img src="assets/images/figurative-chess.jpg" alt="Piezas de ajedrez sobre tablero" />
+        </div>
+        <div>
+          <span class="er-blog-card__tag er-blog-card__tag--parents" style="display:inline-block;margin-bottom:14px">Para padres</span>
+          <h2 class="er-section__title" style="margin-top:0">Por qué el ajedrez es la mejor herramienta para enseñar a pensar</h2>
+          <p class="er-lead" style="margin-bottom:20px">El ajedrez no es solo un juego de mesa. Es un laboratorio donde los niños practican la paciencia, el análisis y la toma de decisiones, habilidades que transforman su vida dentro y fuera del tablero.</p>
+          <a href="#" class="er-btn er-btn--primary">Leer articulo <span class="er-bounce-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Blog grid ───────────────────────────────────────────────────────── -->
+  <section class="er-section er-section--white">
+    <div class="er-container er-reveal">
+      <div class="er-eyebrow">Articulos recientes</div>
+      <h2 class="er-section__title">Aprende, juega, crece.</h2>
+      <div class="er-blog-grid">
+
+        <article class="er-blog-card">
+          <div class="er-blog-card__img">
+            <img src="assets/images/bauhaus-chess.jpg" alt="Piezas de ajedrez Bauhaus" />
+            <span class="er-blog-card__tag er-blog-card__tag--tips">Consejos</span>
+          </div>
+          <div class="er-blog-card__body">
+            <span class="er-blog-card__date">20 junio 2026</span>
+            <h3 class="er-blog-card__title">5 formas de practicar ajedrez en familia (sin tablero)</h3>
+            <p class="er-blog-card__excerpt">No necesitas un tablero para pensar como ajedrecista. Estas actividades entrenan la mente estratégica en cualquier momento del día.</p>
+            <a href="#" class="er-blog-card__link">Leer mas <span class="er-bounce-arrow">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="er-blog-card">
+          <div class="er-blog-card__img">
+            <img src="assets/images/manray-chess.jpg" alt="Composición artística de ajedrez" />
+            <span class="er-blog-card__tag er-blog-card__tag--values">Valores</span>
+          </div>
+          <div class="er-blog-card__body">
+            <span class="er-blog-card__date">14 junio 2026</span>
+            <h3 class="er-blog-card__title">Perder bien: la lección mas importante del tablero</h3>
+            <p class="er-blog-card__excerpt">En El Rey no evitamos que los niños pierdan. Les enseñamos a procesar la derrota, aprender de ella y volver a intentarlo con mas criterio.</p>
+            <a href="#" class="er-blog-card__link">Leer mas <span class="er-bounce-arrow">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="er-blog-card">
+          <div class="er-blog-card__img">
+            <img src="assets/images/skyline-chess-london.jpg" alt="Set de ajedrez creativo" />
+            <span class="er-blog-card__tag er-blog-card__tag--fun">Divertido</span>
+          </div>
+          <div class="er-blog-card__body">
+            <span class="er-blog-card__date">7 junio 2026</span>
+            <h3 class="er-blog-card__title">La historia del caballo: la pieza mas traviesa del tablero</h3>
+            <p class="er-blog-card__excerpt">Salta sobre las demas, se mueve en L y es la favorita de los niños. Descubre por qué el caballo es especial y cómo dominar su movimiento.</p>
+            <a href="#" class="er-blog-card__link">Leer mas <span class="er-bounce-arrow">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="er-blog-card">
+          <div class="er-blog-card__img">
+            <img src="assets/images/bauhaus-set-white.jpg" alt="Set de ajedrez minimalista" />
+            <span class="er-blog-card__tag er-blog-card__tag--parents">Para padres</span>
+          </div>
+          <div class="er-blog-card__body">
+            <span class="er-blog-card__date">1 junio 2026</span>
+            <h3 class="er-blog-card__title">No necesitas saber jugar para apoyar a tu hijo</h3>
+            <p class="er-blog-card__excerpt">Muchos padres no saben mover las piezas, y esta bien. Lo que importa es acompañar el proceso, no dirigirlo. Te contamos cómo.</p>
+            <a href="#" class="er-blog-card__link">Leer mas <span class="er-bounce-arrow">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="er-blog-card">
+          <div class="er-blog-card__img">
+            <img src="assets/images/skyline-chess-nyc.jpg" alt="Ajedrez y arquitectura" />
+            <span class="er-blog-card__tag er-blog-card__tag--tips">Consejos</span>
+          </div>
+          <div class="er-blog-card__body">
+            <span class="er-blog-card__date">25 mayo 2026</span>
+            <h3 class="er-blog-card__title">Cómo saber si tu hijo esta listo para aprender ajedrez</h3>
+            <p class="er-blog-card__excerpt">La edad es una guía, no una regla. Estas señales te ayudan a entender si es el momento adecuado para empezar.</p>
+            <a href="#" class="er-blog-card__link">Leer mas <span class="er-bounce-arrow">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="er-blog-card">
+          <div class="er-blog-card__img">
+            <img src="assets/images/arquitectura-trevi.jpg" alt="Arquitectura y estrategia" />
+            <span class="er-blog-card__tag er-blog-card__tag--values">Valores</span>
+          </div>
+          <div class="er-blog-card__body">
+            <span class="er-blog-card__date">18 mayo 2026</span>
+            <h3 class="er-blog-card__title">Paciencia, la jugada que no se ve en el tablero</h3>
+            <p class="er-blog-card__excerpt">El ajedrez enseña algo que pocas actividades logran: esperar, observar, y actuar solo cuando es el momento correcto.</p>
+            <a href="#" class="er-blog-card__link">Leer mas <span class="er-bounce-arrow">&rarr;</span></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA band ────────────────────────────────────────────────────────── -->
+  <section class="er-section er-section--dark">
+    <div class="er-container er-narrow er-reveal" style="text-align:center;margin:0 auto">
+      <div class="er-eyebrow er-eyebrow--on-dark">Empecemos</div>
+      <h2 class="er-section__title">La primera clase es de prueba.<br />Y sin compromiso.</h2>
+      <p class="er-lead" style="color:var(--fg-on-dark-2);max-width:48ch;margin:0 auto 28px">Cuéntanos sobre tu hijo o hija. Te escribimos en menos de 48 horas para coordinar una primera sesión.</p>
+      <a href="contacto.html" class="er-btn er-btn--primary er-btn--lg">Reservar clase de prueba</a>
+    </div>
+  </section>
+</main>
+
+<footer class="er-footer">
+  <div class="er-container er-footer__inner">
+    <div class="er-footer__brand">
+      <img src="assets/logos/logo-verde.svg" alt="El Rey" />
+      <p class="er-micro">Escuela de ajedrez · Venezuela<br />Formando mentes estratégicas desde 2020.</p>
+    </div>
+    <div class="er-footer__col"><div class="er-eyebrow">Programa</div><a href="programa.html">Iniciación · 6-8</a><a href="programa.html">Intermedio · 9-12</a><a href="programa.html">Avanzado · 13+</a></div>
+    <div class="er-footer__col"><div class="er-eyebrow">Escuela</div><a href="nosotros.html">Nosotros</a><a href="blog.html">Blog</a><a href="contacto.html">Inscripción</a></div>
+    <div class="er-footer__col"><div class="er-eyebrow">Visitanos</div><p class="er-small">Caracas, Venezuela</p><p class="er-small">+58 000 000 0000<br />hola@elrey.com</p></div>
+  </div>
+  <div class="er-container er-footer__bottom">
+    <span class="er-micro">&copy; 2026 El Rey</span>
+    <span class="er-micro">Aviso legal · Privacidad · Cookies</span>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+</body>
+</html>

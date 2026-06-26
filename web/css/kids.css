@@ -1,0 +1,419 @@
+/* ============================================================================
+   El Rey — Kids-friendly overlay
+   Playful colors, animations, and visual delight for young users.
+   Loaded AFTER site.css to layer on top of the institutional base.
+   ========================================================================= */
+
+:root {
+  --kids-yellow:     #FFD93D;
+  --kids-orange:     #FF6B35;
+  --kids-coral:      #FF8585;
+  --kids-sky:        #4ECDC4;
+  --kids-purple:     #A855F7;
+  --kids-pink:       #F472B6;
+  --kids-lime:       #84CC16;
+  --kids-blue:       #38BDF8;
+}
+
+/* ─── Hamburger menu (mobile) ───────────────────────────────────────────── */
+.er-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 60;
+}
+.er-hamburger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: var(--fg-1);
+  border-radius: 2px;
+  transition: all var(--dur-base) var(--ease-standard);
+  margin: 5px 0;
+}
+.er-hamburger.is-open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.er-hamburger.is-open span:nth-child(2) { opacity: 0; }
+.er-hamburger.is-open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+@media (max-width: 880px) {
+  .er-hamburger { display: block; }
+  .er-nav {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--er-crema);
+    z-index: 55;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-base) var(--ease-standard);
+  }
+  .er-nav.is-open { opacity: 1; pointer-events: all; }
+  .er-nav a { font-size: 22px !important; font-weight: 700 !important; }
+  .er-header .er-btn--sm { display: none; }
+}
+
+/* ─── Colorful header accent bar ────────────────────────────────────────── */
+.er-header::before {
+  content: "";
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, var(--kids-yellow), var(--kids-orange), var(--kids-coral), var(--kids-purple), var(--kids-sky), var(--kids-lime));
+  background-size: 200% 100%;
+  animation: rainbow-slide 6s linear infinite;
+}
+@keyframes rainbow-slide {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ─── Playful nav hover ─────────────────────────────────────────────────── */
+.er-nav a { transition: color var(--dur-fast), transform var(--dur-fast) !important; }
+.er-nav a:hover { transform: scale(1.08); color: var(--kids-orange) !important; }
+.er-nav a.is-active { color: var(--kids-orange) !important; }
+.er-nav a.is-active::after { background: var(--kids-orange) !important; }
+
+/* ─── Fun CTA button variants ───────────────────────────────────────────── */
+.er-btn--primary {
+  background: linear-gradient(135deg, var(--er-verde-pino), var(--kids-sky)) !important;
+  border: none !important;
+  position: relative;
+  overflow: hidden;
+}
+.er-btn--primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--kids-sky), var(--er-verde-pino));
+  opacity: 0;
+  transition: opacity var(--dur-base);
+}
+.er-btn--primary:hover::after { opacity: 1; }
+.er-btn--primary:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 8px 24px rgba(78,205,196,0.3) !important;
+}
+.er-btn--primary span, .er-btn--primary { position: relative; z-index: 1; }
+
+/* ─── Wavy section dividers ─────────────────────────────────────────────── */
+.er-wave {
+  position: relative;
+}
+.er-wave::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 0; right: 0;
+  height: 30px;
+  background: inherit;
+  clip-path: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 30'%3E%3Cpath d='M0 30 C360 0 720 30 1080 0 C1260 15 1440 30 1440 30 L1440 30 L0 30 Z'/%3E%3C/svg%3E");
+}
+
+/* ─── Floating chess pieces background ──────────────────────────────────── */
+.er-hero { overflow: hidden; }
+.er-floating-pieces {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.er-floating-pieces img {
+  position: absolute;
+  opacity: 0.12;
+  animation: float-piece 8s ease-in-out infinite;
+}
+.er-floating-pieces img:nth-child(1) { left: 5%; top: 15%; width: 60px; animation-delay: 0s; }
+.er-floating-pieces img:nth-child(2) { right: 15%; top: 20%; width: 50px; animation-delay: 1.5s; animation-duration: 10s; }
+.er-floating-pieces img:nth-child(3) { left: 20%; bottom: 15%; width: 45px; animation-delay: 3s; animation-duration: 7s; }
+.er-floating-pieces img:nth-child(4) { right: 8%; bottom: 25%; width: 55px; animation-delay: 2s; animation-duration: 9s; }
+.er-floating-pieces img:nth-child(5) { left: 50%; top: 10%; width: 40px; animation-delay: 4s; animation-duration: 11s; }
+
+@keyframes float-piece {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-18px) rotate(5deg); }
+  75% { transform: translateY(12px) rotate(-3deg); }
+}
+
+/* ─── Hero: colorful gradient + kid-friendly ────────────────────────────── */
+.er-hero {
+  background: linear-gradient(135deg, var(--er-verde-pino) 0%, #1a4a3d 40%, #1B2A4A 100%) !important;
+}
+.er-hero__title em {
+  background: linear-gradient(135deg, var(--kids-yellow), var(--kids-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+  opacity: 1 !important;
+}
+
+/* ─── Colorful value cards ──────────────────────────────────────────────── */
+.er-values {
+  background: none !important;
+  border: none !important;
+  gap: 16px !important;
+}
+.er-value {
+  border-radius: var(--radius-lg) !important;
+  border: 2px solid var(--line) !important;
+  transition: transform var(--dur-base), box-shadow var(--dur-base), border-color var(--dur-base) !important;
+}
+.er-value:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-3);
+}
+.er-value:nth-child(1):hover { border-color: var(--kids-yellow) !important; }
+.er-value:nth-child(2):hover { border-color: var(--kids-orange) !important; }
+.er-value:nth-child(3):hover { border-color: var(--kids-sky) !important; }
+.er-value:nth-child(4):hover { border-color: var(--kids-purple) !important; }
+.er-value:nth-child(5):hover { border-color: var(--kids-lime) !important; }
+.er-value:nth-child(6):hover { border-color: var(--kids-pink) !important; }
+
+/* ─── Colorful program cards ────────────────────────────────────────────── */
+.er-card {
+  transition: transform var(--dur-base), box-shadow var(--dur-base) !important;
+  border: 2px solid transparent !important;
+}
+.er-card:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: var(--shadow-4);
+}
+.er-card:nth-child(1) { border-bottom: 4px solid var(--kids-lime) !important; }
+.er-card:nth-child(2) { border-bottom: 4px solid var(--kids-sky) !important; }
+.er-card:nth-child(3) { border-bottom: 4px solid var(--kids-purple) !important; }
+.er-card:nth-child(1):hover { border-color: var(--kids-lime) !important; }
+.er-card:nth-child(2):hover { border-color: var(--kids-sky) !important; }
+.er-card:nth-child(3):hover { border-color: var(--kids-purple) !important; }
+
+.er-card__piece {
+  transition: transform var(--dur-slow) var(--ease-out) !important;
+}
+.er-card:hover .er-card__piece {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* ─── Testimonial: warm gradient ────────────────────────────────────────── */
+.er-testimonial {
+  background: linear-gradient(135deg, var(--er-malva), #8B5A8A, var(--er-azul-marino)) !important;
+}
+
+/* ─── Stats: colorful numbers ───────────────────────────────────────────── */
+.er-stats > div:nth-child(1) .er-stat__num { color: var(--kids-yellow); }
+.er-stats > div:nth-child(2) .er-stat__num { color: var(--kids-sky); }
+.er-stats > div:nth-child(3) .er-stat__num { color: var(--kids-orange); }
+.er-stats > div:nth-child(4) .er-stat__num { color: var(--kids-lime); }
+
+/* ─── Methodology: accent color steps ───────────────────────────────────── */
+.er-step__num { color: var(--kids-sky) !important; font-weight: 700 !important; }
+.er-step:nth-child(1) .er-step__num { color: var(--kids-yellow) !important; }
+.er-step:nth-child(2) .er-step__num { color: var(--kids-orange) !important; }
+.er-step:nth-child(3) .er-step__num { color: var(--kids-sky) !important; }
+.er-step:nth-child(4) .er-step__num { color: var(--kids-purple) !important; }
+
+/* ─── Confetti burst on CTA hover ───────────────────────────────────────── */
+@keyframes confetti-pop {
+  0% { transform: scale(0) rotate(0); opacity: 1; }
+  100% { transform: scale(1.5) rotate(180deg); opacity: 0; }
+}
+
+/* ─── Fun cursor trail (subtle) ─────────────────────────────────────────── */
+.er-sparkle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: sparkle-fade 0.6s ease-out forwards;
+}
+@keyframes sparkle-fade {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+/* ─── Blog cards ────────────────────────────────────────────────────────── */
+.er-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 28px;
+}
+.er-blog-card {
+  background: var(--er-blanco);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  transition: transform var(--dur-base), box-shadow var(--dur-base);
+  display: flex;
+  flex-direction: column;
+}
+.er-blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-3);
+}
+.er-blog-card__img {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+}
+.er-blog-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.er-blog-card:hover .er-blog-card__img img {
+  transform: scale(1.06);
+}
+.er-blog-card__tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  color: #fff;
+}
+.er-blog-card__tag--tips { background: var(--kids-sky); }
+.er-blog-card__tag--values { background: var(--kids-purple); }
+.er-blog-card__tag--fun { background: var(--kids-orange); }
+.er-blog-card__tag--parents { background: var(--kids-lime); color: var(--er-verde-pino); }
+
+.er-blog-card__body {
+  padding: 22px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.er-blog-card__date {
+  font-size: 12px;
+  color: var(--fg-3);
+}
+.er-blog-card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--fg-1);
+  margin: 0;
+}
+.er-blog-card__excerpt {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--fg-2);
+  margin: 0;
+}
+.er-blog-card__link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--er-verde-pino);
+  text-decoration: none;
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap var(--dur-base);
+}
+.er-blog-card__link:hover { gap: 10px; color: var(--kids-sky); }
+
+/* ─── Blog featured (hero-style) ────────────────────────────────────────── */
+.er-blog-featured {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 28px;
+}
+.er-blog-featured__img {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  box-shadow: var(--shadow-2);
+}
+.er-blog-featured__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ─── Fun animated chess board pattern (decorative) ─────────────────────── */
+.er-chess-pattern {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(45deg, currentColor 25%, transparent 25%),
+    linear-gradient(-45deg, currentColor 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, currentColor 75%),
+    linear-gradient(-45deg, transparent 75%, currentColor 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0;
+  pointer-events: none;
+  animation: chess-rotate 30s linear infinite;
+}
+@keyframes chess-rotate { 100% { transform: rotate(360deg); } }
+
+/* ─── Colorful section borders ──────────────────────────────────────────── */
+.er-section--crema { border-top: 3px solid transparent; }
+.er-section--crema + .er-section--white { border-top: 3px solid var(--kids-yellow); }
+.er-section--white + .er-section--crema { border-top: 3px solid var(--kids-sky); }
+
+/* ─── Enhanced reveal animation ─────────────────────────────────────────── */
+.er-reveal {
+  transform: translateY(24px) !important;
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out) !important;
+}
+.er-reveal.is-in {
+  transform: none !important;
+}
+
+/* ─── Tick marks: colorful ──────────────────────────────────────────────── */
+.er-pd__reassure li:nth-child(1) .er-tick { background: rgba(78,205,196,0.15); color: var(--kids-sky); }
+.er-pd__reassure li:nth-child(2) .er-tick { background: rgba(255,217,61,0.15); color: #D4A800; }
+.er-pd__reassure li:nth-child(3) .er-tick { background: rgba(168,85,247,0.15); color: var(--kids-purple); }
+.er-pd__reassure li:nth-child(4) .er-tick { background: rgba(132,204,22,0.15); color: #5A8F0E; }
+
+/* ─── Dark section: gradient instead of flat ────────────────────────────── */
+.er-section--dark {
+  background: linear-gradient(135deg, var(--er-verde-pino), var(--er-azul-marino)) !important;
+}
+
+/* ─── Footer: colorful accent ───────────────────────────────────────────── */
+.er-footer {
+  border-top: 4px solid transparent !important;
+  border-image: linear-gradient(90deg, var(--kids-yellow), var(--kids-orange), var(--kids-coral), var(--kids-purple), var(--kids-sky), var(--kids-lime)) 1 !important;
+}
+
+/* ─── Responsive for blog ───────────────────────────────────────────────── */
+@media (max-width: 880px) {
+  .er-blog-grid { grid-template-columns: 1fr; }
+  .er-blog-featured { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* ─── Fun page transition ───────────────────────────────────────────────── */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+main { animation: page-in 0.5s var(--ease-out); }
+
+/* ─── Bouncing CTA arrow ────────────────────────────────────────────────── */
+.er-bounce-arrow {
+  display: inline-block;
+  animation: bounce-arrow 1.5s ease-in-out infinite;
+}
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
