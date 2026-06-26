@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "outputDirectory": "landing",
+  "outputDirectory": "web",
   "cleanUrls": true,
   "trailingSlash": false
 }
