@@ -252,6 +252,9 @@
 .g-cta__title { color: var(--fg-on-dark); margin: 0 auto var(--sp-5); max-width: 20ch; }
 .g-cta__lead { color: var(--fg-on-dark-2); margin: 0 auto var(--sp-7); max-width: 54ch; }
 .g-cta__actions { display: flex; gap: var(--sp-4); justify-content: center; flex-wrap: wrap; }
+/* Botón sobre el verde pino: invertido (crema) para que contraste. */
+.g-cta .btn--primary { background: var(--er-crema); color: var(--er-verde-pino); box-shadow: var(--shadow-3); }
+.g-cta .btn--primary:hover { background: var(--er-blanco); color: var(--er-verde-pino); }
 
 /* ── Footer compacto ───────────────────────────────────────────────────── */
 .footer__bar--solo {
