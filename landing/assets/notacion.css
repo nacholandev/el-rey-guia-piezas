@@ -115,6 +115,32 @@
 }
 .cta-final .btn--primary:hover { background: var(--er-blanco); color: var(--er-verde-pino); }
 
+/* ── Pop-up "Gracias" ──────────────────────────────────────────────────── */
+.thanks {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center; padding: var(--sp-5);
+  background: rgba(28, 61, 52, 0.55); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  opacity: 0; transition: opacity var(--dur-base) var(--ease-standard);
+}
+.thanks.is-visible { opacity: 1; }
+.thanks__card {
+  background: var(--er-crema); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-4); padding: clamp(28px, 5vw, 48px);
+  max-width: 420px; width: 100%; text-align: center;
+  transform: translateY(10px) scale(0.98);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.thanks.is-visible .thanks__card { transform: none; }
+.thanks__mark { display: block; margin: 0 auto var(--sp-4); }
+.thanks__title { margin: 0 0 var(--sp-3); color: var(--fg-1); }
+.thanks__lead { margin: 0 0 var(--sp-5); color: var(--fg-2); }
+.thanks__btn { width: 100%; }
+.thanks__micro { margin: var(--sp-4) 0 0; color: var(--fg-3); font-style: italic; }
+@media (prefers-reduced-motion: reduce) {
+  .thanks, .thanks__card { transition: none; }
+  .thanks__card { transform: none; }
+}
+
 /* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 860px) {
   .benefits__grid { grid-template-columns: repeat(2, 1fr); }
