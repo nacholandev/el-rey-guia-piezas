@@ -52,9 +52,47 @@ var REDIRECT_TO = '/notacion/guia';            // lead magnet interactivo
   board.appendChild(frag);
 })();
 
-/* ── Captura de correo → Kit → redirige a la guía ───────────────────────── */
+/* ── Captura de correo → Kit → "Gracias" → redirige a la guía ───────────── */
 (function () {
   var configured = KIT_FORM_ID && KIT_FORM_ID.indexOf('REEMPLAZAR') === -1;
+
+  function goToGuide() { window.location.href = REDIRECT_TO; }
+
+  /* Pop-up de agradecimiento. Se muestra al confirmar el envío y, tras una
+     breve pausa, lleva a la guía. El padre también puede entrar al instante. */
+  var thanksShown = false;
+  function showThanks() {
+    if (thanksShown) return;
+    thanksShown = true;
+
+    var overlay = document.createElement('div');
+    overlay.className = 'thanks';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-labelledby', 'thanks-title');
+    overlay.innerHTML =
+      '<div class="thanks__card">' +
+        '<img class="thanks__mark" src="./assets/logos/isotipo-verde.svg" alt="" width="48" height="48" />' +
+        '<h2 class="thanks__title er-h2" id="thanks-title">Gracias por unirte</h2>' +
+        '<p class="thanks__lead er-lead">Tu guía está lista. Te llevamos a ella en un momento.</p>' +
+        '<button type="button" class="btn btn--primary thanks__btn">Abrir la guía ahora</button>' +
+        '<p class="thanks__micro er-micro">El ajedrez no es el fin, es el medio.</p>' +
+      '</div>';
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () { overlay.classList.add('is-visible'); });
+
+    var btn = overlay.querySelector('.thanks__btn');
+    btn.addEventListener('click', goToGuide);
+    btn.focus();
+
+    // Esc también lleva a la guía (no hay otra acción posible).
+    document.addEventListener('keydown', function onKey(e) {
+      if (e.key === 'Escape') { document.removeEventListener('keydown', onKey); goToGuide(); }
+    });
+
+    setTimeout(goToGuide, 2400);
+  }
 
   function wire(formId, inputId, btnId, microId) {
     var form = document.getElementById(formId);
@@ -80,28 +118,26 @@ var REDIRECT_TO = '/notacion/guia';            // lead magnet interactivo
       micro.textContent = 'Un momento —preparando tu guía.';
       micro.classList.remove('capture__micro--ok');
 
-      // Sin FORM ID configurado: saltamos Kit y vamos directo a la guía (demo).
+      // Sin FORM ID configurado: saltamos Kit y mostramos el gracias igual (demo).
       if (!configured) {
-        window.location.href = REDIRECT_TO;
+        showThanks();
         return;
       }
 
       var data = new FormData();
       data.append('email_address', email); // campo estándar de Kit
 
-      var done = false;
-      function go() { if (!done) { done = true; window.location.href = REDIRECT_TO; } }
-
-      // Aunque Kit tarde o falle, no bloqueamos al usuario: igual abrimos la guía.
-      var safety = setTimeout(go, 3500);
+      // Aunque Kit tarde o falle, no bloqueamos al usuario: igual mostramos el
+      // gracias (que luego abre la guía). showThanks() se protege de repetirse.
+      var safety = setTimeout(showThanks, 3500);
 
       fetch(KIT_ENDPOINT, {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: data
       })
-        .then(function () { clearTimeout(safety); go(); })
-        .catch(function () { clearTimeout(safety); go(); });
+        .then(function () { clearTimeout(safety); showThanks(); })
+        .catch(function () { clearTimeout(safety); showThanks(); });
     });
   }
 
