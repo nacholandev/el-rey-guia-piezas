@@ -5,15 +5,19 @@
    2) Captura de correo → Kit (ConvertKit) → redirige al lead magnet interactivo.
 
    CONFIG — KIT (CONVERTKIT):
-   Pega abajo el FORM ID de Kit. Mientras sea el placeholder, el formulario NO
-   envía a Kit: solo redirige a la guía (modo demo, para revisar el flujo).
-   Si tu cuenta de Kit usa un endpoint distinto al estándar, reemplaza también
-   KIT_ENDPOINT con el "action" del snippet de embed HTML de tu formulario.
+   Conectado al formulario 9615936 (action /subscriptions, campo email_address).
+   Si dejas el FORM ID como placeholder ('REEMPLAZAR...'), corre en modo demo:
+   no envía a Kit, solo redirige a la guía —útil para revisar el flujo.
    ========================================================================= */
 
-var KIT_FORM_ID = 'REEMPLAZAR_FORM_ID';        // ← FORM ID de Kit (ConvertKit)
-var KIT_ENDPOINT = 'https://app.kit.com/forms/' + KIT_FORM_ID + '/subscribe';
+var KIT_FORM_ID = '9615936';                   // FORM ID de Kit (ConvertKit)
+var KIT_ENDPOINT = 'https://app.kit.com/forms/' + KIT_FORM_ID + '/subscriptions';
 var REDIRECT_TO = '/notacion/guia';            // lead magnet interactivo
+
+/* Nota: el formulario de Kit es de DOBLE OPT-IN —tras enviar, Kit manda un
+   correo de confirmación ("revisa tu correo para confirmar"). Aquí abrimos la
+   guía igual al instante (el valor es la web); el correo queda en Kit para el
+   seguimiento una vez confirmado. */
 
 /* ── Mini-tablero del hero ──────────────────────────────────────────────── */
 (function () {
