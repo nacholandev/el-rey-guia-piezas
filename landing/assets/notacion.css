@@ -108,6 +108,13 @@
 .cta-final__micro { color: var(--fg-on-dark-2); text-align: center; }
 .cta-final .capture__micro--ok { color: var(--er-crema); }
 
+/* Botón sobre el verde pino: invertido (crema) para que contraste. */
+.cta-final .btn--primary {
+  background: var(--er-crema); color: var(--er-verde-pino);
+  box-shadow: var(--shadow-3);
+}
+.cta-final .btn--primary:hover { background: var(--er-blanco); color: var(--er-verde-pino); }
+
 /* ── Responsive ────────────────────────────────────────────────────────── */
 @media (max-width: 860px) {
   .benefits__grid { grid-template-columns: repeat(2, 1fr); }
