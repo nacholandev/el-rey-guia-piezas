@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía gratis: el lenguaje del ajedrez — enseña a tu hijo a leer y escribir cada jugada · El Rey</title>
+  <meta name="description" content="Guía interactiva gratuita para padres. Aprende con tu hijo a leer y escribir partidas de ajedrez con la notación algebraica —el idioma con el que piensan los maestros— aunque tú no sepas jugar." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="El lenguaje del ajedrez. Enséñale a tu hijo a leer y escribir cada jugada." />
+  <meta property="og:description" content="Guía interactiva gratuita para padres. La notación del ajedrez, explicada para que un niño la entienda y tú puedas guiarlo." />
+  <meta property="og:image" content="./assets/images/nino-tablero.jpg" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="./assets/logos/isotipo-verde.svg" />
+  <link rel="stylesheet" href="./assets/colors_and_type.css" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <link rel="stylesheet" href="./assets/notacion.css" />
+</head>
+<body>
+
+  <!-- ── Top bar: isotipo solo (sin lockup horizontal) ───────────────────── -->
+  <header class="topbar">
+    <a class="topbar__brand" href="#" aria-label="El Rey — inicio">
+      <img src="./assets/logos/isotipo-verde.svg" alt="El Rey" width="36" height="36" />
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="nav__cta btn btn--primary btn--sm" href="#empezar">Quiero la guía</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="er-eyebrow hero__eyebrow">Guía interactiva gratuita para padres</p>
+        <h1 class="er-display hero__title">
+          Tu hijo ya mueve las piezas.
+          <span class="hero__title-soft">Ahora enséñale a leer y escribir cada jugada.</span>
+        </h1>
+        <p class="er-lead hero__lead">
+          La notación algebraica es el idioma con el que piensan los maestros —y el que
+          deja por escrito cada partida. Aprende con tu hijo a leerlo y escribirlo en una
+          tarde, aunque tú no sepas jugar.
+        </p>
+
+        <!-- ── Email capture · al enviar redirige al lead magnet interactivo ──
+             La integración con Kit (ConvertKit) vive en /assets/notacion.js.
+        -->
+        <form id="capture" class="capture" novalidate>
+          <label class="sr-only" for="email">Tu correo electrónico</label>
+          <input id="email" name="email" type="email" required
+                 placeholder="tu@correo.com" autocomplete="email" class="capture__input" />
+          <button type="submit" class="btn btn--primary" id="capture-btn">Acceder a la guía</button>
+        </form>
+        <p class="capture__micro er-micro" id="capture-micro">
+          Sin spam. Te abrimos la guía al instante.
+        </p>
+      </div>
+
+      <!-- Mini-tablero: anticipo de lo interactivo (e4 resaltado) -->
+      <figure class="hero__board" aria-hidden="true">
+        <div class="miniboard" id="miniboard"></div>
+        <figcaption class="hero__board-cap er-small">
+          <span class="hero__move">1. e4</span> — la jugada más famosa del ajedrez, escrita.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ── Qué vas a poder hacer ────────────────────────────────────────── -->
+    <section class="benefits">
+      <p class="er-eyebrow benefits__eyebrow">Lo que tú y tu hijo van a poder hacer</p>
+      <ul class="benefits__grid">
+        <li class="benefit">
+          <img class="benefit__ico" src="./assets/values/pensamiento-estrategico.svg" alt="" />
+          <h3 class="er-h4">Leer cualquier partida</h3>
+          <p class="er-small">Abrir un libro o una partida famosa y seguir cada jugada sin perderse.</p>
+        </li>
+        <li class="benefit">
+          <img class="benefit__ico" src="./assets/values/formacion.svg" alt="" />
+          <h3 class="er-h4">Anotar las suyas</h3>
+          <p class="er-small">Que tu hijo deje por escrito sus propias partidas y aprenda de ellas.</p>
+        </li>
+        <li class="benefit">
+          <img class="benefit__ico" src="./assets/values/crecimiento.svg" alt="" />
+          <h3 class="er-h4">Entender el tablero</h3>
+          <p class="er-small">Nombrar cada casilla por sus coordenadas —el primer paso para pensar.</p>
+        </li>
+        <li class="benefit">
+          <img class="benefit__ico" src="./assets/values/acompanamiento.svg" alt="" />
+          <h3 class="er-h4">Hablar su idioma</h3>
+          <p class="er-small">Acompañarlo con un lenguaje común, aunque empieces desde cero.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ── Cómo funciona ────────────────────────────────────────────────── -->
+    <section class="how">
+      <div class="how__head">
+        <p class="er-eyebrow">Cómo funciona</p>
+        <h2 class="er-h2">No es un PDF que se queda en la carpeta de descargas</h2>
+        <p class="er-lead how__lead">Es una guía interactiva: tableros que responden, jugadas que se arman solas y un juego para practicar. Se abre en el navegador, en el teléfono o en la computadora.</p>
+      </div>
+      <ol class="how__steps">
+        <li class="how__step"><span class="how__num">1</span><p class="er-body">Déjanos tu correo aquí abajo.</p></li>
+        <li class="how__step"><span class="how__num">2</span><p class="er-body">Se abre la guía al instante —sin esperar nada en el correo.</p></li>
+        <li class="how__step"><span class="how__num">3</span><p class="er-body">Recórrela con tu hijo: toca casillas, arma jugadas y prueben el quiz.</p></li>
+      </ol>
+    </section>
+
+    <!-- ── Cierre + form repetido (fondo verde pino) ────────────────────── -->
+    <section class="cta-final" id="empezar">
+      <div class="cta-final__rule" aria-hidden="true"></div>
+      <h2 class="er-h2 cta-final__title">El ajedrez no es el fin, es el medio.</h2>
+      <p class="er-lead cta-final__lead">
+        Aprender a escribir una jugada es aprender a pensarla dos veces. Empieza esa
+        conversación con tu hijo hoy —es nuestra, para ti, gratis.
+      </p>
+      <form id="capture-2" class="capture capture--center" novalidate>
+        <label class="sr-only" for="email-2">Tu correo electrónico</label>
+        <input id="email-2" name="email" type="email" required
+               placeholder="tu@correo.com" autocomplete="email" class="capture__input" />
+        <button type="submit" class="btn btn--primary" id="capture-btn-2">Acceder a la guía</button>
+      </form>
+      <p class="capture__micro er-micro cta-final__micro" id="capture-micro-2">
+        Sin spam. Te abrimos la guía al instante.
+      </p>
+    </section>
+  </main>
+
+  <!-- ── Footer: logo vertical completo ──────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img class="footer__logo" src="./assets/logos/logo-crema.svg" alt="El Rey" width="72" height="72" />
+        <p class="footer__line er-small">El ajedrez no es el fin, es el medio.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Páginas">
+        <h3 class="footer__title er-eyebrow">Navegación</h3>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#empezar">Quiero la guía</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col" aria-label="Legal">
+        <h3 class="footer__title er-eyebrow">Legal</h3>
+        <ul>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Política de cookies</a></li>
+        </ul>
+      </nav>
+
+      <!-- TODO: reemplazar con los datos de contacto reales de El Rey -->
+      <div class="footer__col" aria-label="Contacto">
+        <h3 class="footer__title er-eyebrow">Contacto</h3>
+        <ul>
+          <li><a href="mailto:hola@elrey.com">hola@elrey.com</a></li>
+          <li><a href="https://wa.me/58000000000">WhatsApp: +58 000-000-0000</a></li>
+          <li><span>Venezuela</span></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <p class="footer__legal er-micro">© 2026 El Rey · Academia de ajedrez</p>
+    </div>
+  </footer>
+
+  <script src="./assets/notacion.js"></script>
+</body>
+</html>

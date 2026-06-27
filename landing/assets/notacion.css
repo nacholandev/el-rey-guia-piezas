@@ -1,0 +1,122 @@
+/* ============================================================================
+   El Rey — Landing "El lenguaje del ajedrez" (notación · lead magnet)
+   Estilos propios de esta página. Tokens en colors_and_type.css; clases base
+   (.btn, .capture, .hero, .footer…) se reusan de styles.css.
+   ========================================================================= */
+
+/* ── Hero: mini-tablero en lugar de imagen ─────────────────────────────── */
+.hero__board {
+  margin: 0;
+  display: flex; flex-direction: column; align-items: center; gap: var(--sp-4);
+}
+.miniboard {
+  --sq: clamp(30px, 5.4vw, 52px);
+  display: grid;
+  grid-template-columns: repeat(8, var(--sq));
+  grid-template-rows: repeat(8, var(--sq));
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-4);
+  border: 1px solid var(--line-strong);
+}
+.mini-sq { position: relative; }
+.mini-sq--light { background: var(--er-crema); }
+.mini-sq--dark  { background: #14302A; }
+.mini-sq--mark::after {
+  content: ""; position: absolute; inset: 14%;
+  border: 2px solid var(--er-malva); border-radius: var(--radius-xs);
+  box-shadow: 0 0 0 3px rgba(107,73,102,0.18);
+}
+.mini-sq__label {
+  position: absolute; left: 50%; bottom: 6%; transform: translateX(-50%);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  color: var(--er-malva); letter-spacing: 0.02em;
+}
+.mini-sq__piece {
+  position: absolute; inset: 14%; width: 72%; height: 72%; padding: 7%;
+  background: var(--er-crema); border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill); box-shadow: var(--shadow-2);
+}
+.hero__board-cap { color: var(--fg-3); text-align: center; max-width: 32ch; }
+.hero__move {
+  font-family: var(--font-mono); font-weight: 700; color: var(--fg-1);
+  background: var(--er-verde-pino-10); border: 1px solid var(--line-strong);
+  border-radius: var(--radius-xs); padding: 1px 8px;
+}
+
+/* ── Beneficios ────────────────────────────────────────────────────────── */
+.benefits {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: clamp(48px, 6vw, 88px) clamp(20px, 6vw, 96px);
+}
+.benefits__eyebrow { text-align: center; margin: 0 0 var(--sp-7); }
+.benefits__grid {
+  list-style: none; margin: 0 auto; padding: 0; max-width: 1120px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-4);
+  grid-auto-rows: 1fr;
+}
+.benefit {
+  display: flex; flex-direction: column; gap: var(--sp-2);
+  background: var(--bg-elevated); border: 1px solid var(--line);
+  border-radius: var(--radius-md); padding: var(--sp-6) var(--sp-5);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.benefit:hover { transform: translateY(-4px); box-shadow: var(--shadow-3); }
+.benefit__ico { width: 36px; height: 36px; margin-bottom: var(--sp-3); }
+.benefit h3 { margin: 0; color: var(--fg-1); }
+.benefit p { margin: 0; color: var(--fg-3); }
+
+/* ── Cómo funciona ─────────────────────────────────────────────────────── */
+.how {
+  max-width: 920px; margin: 0 auto;
+  padding: clamp(48px, 7vw, 96px) clamp(20px, 6vw, 96px);
+}
+.how__head { text-align: center; margin-bottom: var(--sp-7); }
+.how__head .er-eyebrow { margin: 0 0 var(--sp-3); }
+.how__head h2 { margin: 0 auto var(--sp-4); max-width: 22ch; }
+.how__lead { margin: 0 auto; max-width: 56ch; color: var(--fg-2); }
+.how__steps {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-5);
+}
+.how__step {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--sp-3);
+}
+.how__step p { margin: 0; max-width: 28ch; }
+.how__num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: var(--radius-pill);
+  background: var(--accent); color: var(--accent-on);
+  font-family: var(--font-display); font-weight: 800; font-size: var(--fs-h4);
+}
+
+/* ── Cierre / CTA final (fondo verde pino) ─────────────────────────────── */
+.cta-final {
+  background: var(--bg-inverse); color: var(--fg-on-dark);
+  text-align: center; padding: clamp(56px, 8vw, 112px) clamp(20px, 6vw, 96px);
+}
+.cta-final__rule {
+  height: 14px; margin: 0 auto var(--sp-7); max-width: 360px; border-radius: var(--radius-xs);
+  background-image: repeating-linear-gradient(90deg,
+    var(--er-crema) 0 14px, #14302A 14px 28px);
+  box-shadow: inset 0 0 0 1px var(--line-on-dark);
+}
+.cta-final__title { color: var(--fg-on-dark); margin: 0 auto var(--sp-5); max-width: 22ch; }
+.cta-final__lead { color: var(--fg-on-dark-2); margin: 0 auto var(--sp-7); max-width: 52ch; }
+.capture--center { max-width: 520px; margin: 0 auto; justify-content: center; }
+.cta-final__micro { color: var(--fg-on-dark-2); text-align: center; }
+.cta-final .capture__micro--ok { color: var(--er-crema); }
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .benefits__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .how__steps { grid-template-columns: 1fr; gap: var(--sp-6); }
+}
+@media (max-width: 520px) {
+  .benefits__grid { grid-template-columns: 1fr; }
+  .capture--center { flex-direction: column; align-items: stretch; }
+  .capture--center .capture__input { flex: 0 0 auto; width: 100%; }
+}

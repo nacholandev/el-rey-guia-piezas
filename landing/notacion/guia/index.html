@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El lenguaje del ajedrez · Guía interactiva de notación · El Rey</title>
+  <meta name="description" content="Guía interactiva para padres e hijos: aprende a leer y escribir las jugadas del ajedrez con la notación algebraica. Tablero interactivo, jugadas que se arman solas y un quiz para practicar." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/logos/isotipo-verde.svg" />
+  <link rel="stylesheet" href="../../assets/colors_and_type.css" />
+  <link rel="stylesheet" href="../../assets/styles.css" />
+  <link rel="stylesheet" href="../../assets/guia.css" />
+</head>
+<body class="g-body">
+
+  <!-- ── Top bar ─────────────────────────────────────────────────────────── -->
+  <header class="topbar">
+    <a class="topbar__brand" href="/" aria-label="El Rey — inicio">
+      <img src="../../assets/logos/isotipo-verde.svg" alt="El Rey" width="36" height="36" />
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="nav__cta btn btn--primary btn--sm" href="/#contacto">Reservar una clase</a>
+    </nav>
+  </header>
+
+  <main class="g-main">
+
+    <!-- ── Intro ─────────────────────────────────────────────────────────── -->
+    <section class="g-intro">
+      <p class="er-eyebrow">Guía interactiva · para hacer con tu hijo</p>
+      <h1 class="er-display g-intro__title">El lenguaje del ajedrez</h1>
+      <p class="er-lead g-intro__lead">
+        Cada partida de ajedrez se puede escribir, guardar y volver a jugar —como una
+        receta o una canción. Ese idioma se llama <strong>notación algebraica</strong>.
+        Aquí lo aprenden juntos, jugada a jugada. No hace falta saber jugar para empezar.
+      </p>
+      <a class="g-intro__start btn btn--primary" href="#tablero">Empezar</a>
+      <ol class="g-toc er-small" aria-label="Contenido de la guía">
+        <li><a href="#tablero">1 · El tablero por coordenadas</a></li>
+        <li><a href="#piezas">2 · Cada pieza, su letra</a></li>
+        <li><a href="#jugada">3 · Cómo se escribe una jugada</a></li>
+        <li><a href="#simbolos">4 · Los símbolos especiales</a></li>
+        <li><a href="#practica">5 · A practicar</a></li>
+      </ol>
+    </section>
+
+    <!-- ── 1 · El tablero por coordenadas ────────────────────────────────── -->
+    <section class="g-section" id="tablero">
+      <div class="g-section__head">
+        <p class="er-eyebrow">Paso 1</p>
+        <h2 class="er-h2">El tablero tiene direcciones</h2>
+        <p class="er-lead g-section__lead">
+          Las <strong>columnas</strong> se nombran con letras de la <strong>a</strong> a
+          la <strong>h</strong>. Las <strong>filas</strong>, con números del
+          <strong>1</strong> al <strong>8</strong>. Cada casilla es el cruce de una letra
+          y un número —como en una calle: <span class="g-chip">e4</span> es la columna
+          <strong>e</strong>, fila <strong>4</strong>.
+        </p>
+      </div>
+
+      <div class="g-board-wrap">
+        <div class="g-board g-board--labeled" id="coord-board" role="group"
+             aria-label="Tablero interactivo. Toca una casilla para ver su nombre."></div>
+        <div class="g-board-side">
+          <p class="er-small g-hint" id="coord-readout">Pasa el cursor o toca una casilla para ver su nombre.</p>
+          <button type="button" class="btn btn--ghost btn--sm g-toggle" id="coord-toggle" aria-pressed="false">
+            Mostrar todas las coordenadas
+          </button>
+          <p class="er-micro g-tip">
+            Pista para tu hijo: las blancas siempre empiezan abajo. La casilla
+            <span class="g-chip">a1</span> queda en la esquina de abajo a la izquierda.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 2 · Cada pieza, su letra ──────────────────────────────────────── -->
+    <section class="g-section g-section--soft" id="piezas">
+      <div class="g-section__head">
+        <p class="er-eyebrow">Paso 2</p>
+        <h2 class="er-h2">Cada pieza tiene su inicial</h2>
+        <p class="er-lead g-section__lead">
+          Para escribir una jugada usamos la <strong>inicial</strong> de la pieza que se
+          mueve. El peón es el único que no lleva letra —se nombra solo por la casilla.
+        </p>
+      </div>
+
+      <ul class="g-letters">
+        <li class="g-letter"><img src="../../assets/pieces/rey-verde.svg" alt="" /><span class="g-letter__big">R</span><span class="er-h4">Rey</span></li>
+        <li class="g-letter"><img src="../../assets/pieces/reina-verde.svg" alt="" /><span class="g-letter__big">D</span><span class="er-h4">Dama</span></li>
+        <li class="g-letter"><img src="../../assets/pieces/torre-verde.svg" alt="" /><span class="g-letter__big">T</span><span class="er-h4">Torre</span></li>
+        <li class="g-letter"><img src="../../assets/pieces/alfil-verde.svg" alt="" /><span class="g-letter__big">A</span><span class="er-h4">Alfil</span></li>
+        <li class="g-letter"><img src="../../assets/pieces/caballo-verde.svg" alt="" /><span class="g-letter__big">C</span><span class="er-h4">Caballo</span></li>
+        <li class="g-letter g-letter--pawn"><img src="../../assets/pieces/peon-verde.svg" alt="" /><span class="g-letter__big g-letter__big--none">—</span><span class="er-h4">Peón</span><span class="er-micro">sin letra</span></li>
+      </ul>
+      <p class="er-micro g-note">
+        La dama es <strong>D</strong> (de <em>dama</em>) y el rey es <strong>R</strong>.
+        Es la convención en español —en inglés verás otras letras.
+      </p>
+    </section>
+
+    <!-- ── 3 · Cómo se escribe una jugada ────────────────────────────────── -->
+    <section class="g-section" id="jugada">
+      <div class="g-section__head">
+        <p class="er-eyebrow">Paso 3</p>
+        <h2 class="er-h2">Arma una jugada</h2>
+        <p class="er-lead g-section__lead">
+          Una jugada normal es simple: <strong>la letra de la pieza + la casilla a la que
+          llega</strong>. Elige una pieza y toca una casilla —la jugada se escribe sola.
+        </p>
+      </div>
+
+      <div class="g-builder">
+        <div class="g-builder__controls" role="group" aria-label="Elige una pieza">
+          <button type="button" class="g-pick" data-piece="R" data-img="rey">Rey · R</button>
+          <button type="button" class="g-pick" data-piece="D" data-img="reina">Dama · D</button>
+          <button type="button" class="g-pick" data-piece="T" data-img="torre">Torre · T</button>
+          <button type="button" class="g-pick" data-piece="A" data-img="alfil">Alfil · A</button>
+          <button type="button" class="g-pick is-active" data-piece="C" data-img="caballo">Caballo · C</button>
+          <button type="button" class="g-pick" data-piece="" data-img="peon">Peón</button>
+        </div>
+
+        <div class="g-board-wrap g-board-wrap--builder">
+          <div class="g-board" id="builder-board" role="group"
+               aria-label="Toca una casilla para llevar la pieza ahí y ver la jugada escrita."></div>
+          <div class="g-board-side">
+            <p class="er-eyebrow">La jugada se escribe</p>
+            <output class="g-notation" id="builder-notation" aria-live="polite">Cf3</output>
+            <p class="er-small g-hint" id="builder-readout">
+              Toca cualquier casilla para mover el caballo ahí.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4 · Símbolos especiales ───────────────────────────────────────── -->
+    <section class="g-section g-section--soft" id="simbolos">
+      <div class="g-section__head">
+        <p class="er-eyebrow">Paso 4</p>
+        <h2 class="er-h2">Los símbolos especiales</h2>
+        <p class="er-lead g-section__lead">
+          Cuando pasa algo especial —una captura, un jaque, un enroque— la notación lo
+          marca con un símbolo. Estos son los que verás todo el tiempo.
+        </p>
+      </div>
+
+      <ul class="g-symbols">
+        <li class="g-sym"><span class="g-sym__mark">x</span><h3 class="er-h4">Captura</h3><code class="g-sym__ex">Axf3 · dxe5</code><p class="er-small">Una pieza se come a otra. La <strong>x</strong> va antes de la casilla.</p></li>
+        <li class="g-sym"><span class="g-sym__mark">+</span><h3 class="er-h4">Jaque</h3><code class="g-sym__ex">Dh6+</code><p class="er-small">El rey está amenazado y debe responder ya.</p></li>
+        <li class="g-sym"><span class="g-sym__mark">#</span><h3 class="er-h4">Jaque mate</h3><code class="g-sym__ex">Cd5#</code><p class="er-small">Jaque sin escapatoria. Fin de la partida. (También se escribe <strong>++</strong>.)</p></li>
+        <li class="g-sym"><span class="g-sym__mark g-sym__mark--sm">0-0</span><h3 class="er-h4">Enroque corto</h3><code class="g-sym__ex">0-0</code><p class="er-small">El rey y la torre del flanco de rey se mueven juntos para ponerse a salvo.</p></li>
+        <li class="g-sym"><span class="g-sym__mark g-sym__mark--sm">0-0-0</span><h3 class="er-h4">Enroque largo</h3><code class="g-sym__ex">0-0-0</code><p class="er-small">El mismo enroque, pero hacia el flanco de dama.</p></li>
+        <li class="g-sym"><span class="g-sym__mark g-sym__mark--sm">=D</span><h3 class="er-h4">Promoción</h3><code class="g-sym__ex">e8=D</code><p class="er-small">El peón llega al final y se convierte en otra pieza —casi siempre dama.</p></li>
+        <li class="g-sym"><span class="g-sym__mark g-sym__mark--sm">a.p.</span><h3 class="er-h4">Al paso</h3><code class="g-sym__ex">exd6 a.p.</code><p class="er-small">Una captura especial de peón contra peón. Rara, pero existe.</p></li>
+        <li class="g-sym"><span class="g-sym__mark g-sym__mark--sm">Cae1</span><h3 class="er-h4">Desambiguación</h3><code class="g-sym__ex">Cae1 · Tbe1</code><p class="er-small">Si dos piezas iguales pueden ir al mismo sitio, se aclara de cuál hablamos.</p></li>
+      </ul>
+
+      <div class="g-annot">
+        <h3 class="er-h4 g-annot__title">Y los comentarios sobre la jugada</h3>
+        <ul class="g-annot__list">
+          <li><code>!</code> buena jugada</li>
+          <li><code>!!</code> jugada brillante</li>
+          <li><code>?</code> error</li>
+          <li><code>??</code> error grave</li>
+          <li><code>?!</code> imprecisión</li>
+        </ul>
+        <p class="er-micro g-note">Estos no cambian la jugada: son la opinión de quien la anota. Útiles para repasar después y aprender.</p>
+      </div>
+    </section>
+
+    <!-- ── 5 · Práctica · quiz ───────────────────────────────────────────── -->
+    <section class="g-section" id="practica">
+      <div class="g-section__head">
+        <p class="er-eyebrow">Paso 5</p>
+        <h2 class="er-h2">A practicar</h2>
+        <p class="er-lead g-section__lead">
+          Cinco preguntas para hacer con tu hijo. Sin nota, sin presión —solo para fijar
+          lo aprendido. Pueden repetirlo las veces que quieran.
+        </p>
+      </div>
+      <div class="g-quiz" id="quiz" aria-live="polite"></div>
+    </section>
+
+    <!-- ── Cierre · CTA a clases ─────────────────────────────────────────── -->
+    <section class="g-cta">
+      <div class="g-cta__rule" aria-hidden="true"></div>
+      <h2 class="er-h2 g-cta__title">Esto es solo el primer movimiento</h2>
+      <p class="er-lead g-cta__lead">
+        Leer y escribir jugadas es lo que un niño aprende en sus primeras semanas con
+        nosotros. Después viene lo importante: aprender a pensar antes de mover —en el
+        tablero y fuera de él.
+      </p>
+      <div class="g-cta__actions">
+        <a class="btn btn--primary" href="/#contacto">Reservar una clase</a>
+        <a class="btn btn--ghost" href="https://wa.me/58000000000">Escríbenos por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__bar footer__bar--solo">
+      <img class="g-foot-logo" src="../../assets/logos/logo-crema.svg" alt="El Rey" width="56" height="56" />
+      <p class="footer__legal er-micro">El ajedrez no es el fin, es el medio. · © 2026 El Rey</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/guia.js"></script>
+</body>
+</html>
